@@ -1,0 +1,746 @@
+<!DOCTYPE html>
+<html lang="fr" class="scroll-smooth">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Thery-Ryan NDZOBE — Génie Électrique, Automatique & Robotique</title>
+
+  <!-- Polices Éditoriales de Haut Niveau : Instrument Serif pour les titres d'auteur, Plus Jakarta Sans pour le corps d'ingénieur -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=Plus+Jakarta+Sans:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+
+  <!-- Tailwind CSS -->
+  <script src="https://cdn.tailwindcss.com"></script>
+
+  <!-- Lucide Icons -->
+  <script src="https://unpkg.com/lucide@latest"></script>
+
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          fontFamily: {
+            serif: ['"Instrument Serif"', 'Georgia', 'serif'],
+            sans: ['"Plus Jakarta Sans"', 'sans-serif'],
+            mono: ['"JetBrains Mono"', 'monospace'],
+          },
+          colors: {
+            stoneBg: '#F8F7F4',      // Fond beige chaud doux et reposant
+            surfaceLight: '#FFFFFF',
+            cardBorder: '#E7E5E0',
+            brandInk: '#151719',       // Noir d'encre doux
+            brandMuted: '#5E646A',
+            terracotta: '#BC5435',     // Accent cuivre / terre cuite chaud & industriel
+            terracottaHover: '#A34326',
+            warmSand: '#EFECE6',
+          }
+        }
+      }
+    }
+  </script>
+
+  <style>
+    body {
+      background-color: #F8F7F4;
+      color: #151719;
+      font-family: 'Plus Jakarta Sans', sans-serif;
+      -webkit-font-smoothing: antialiased;
+    }
+
+    /* Style signature pour le grand portrait */
+    .portrait-frame {
+      border-radius: 36px;
+      position: relative;
+      background: #E8E5DF;
+      overflow: hidden;
+      box-shadow: 0 16px 36px -12px rgba(21, 23, 25, 0.08);
+      border: 1px solid rgba(21, 23, 25, 0.06);
+    }
+
+    /* Bouton principal chaud & moderne */
+    .btn-editorial {
+      background-color: #151719;
+      color: #FFFFFF;
+      transition: all 0.25s cubic-bezier(0.16, 1, 0.3, 1);
+    }
+    .btn-editorial:hover {
+      background-color: #BC5435;
+      transform: translateY(-1.5px);
+      box-shadow: 0 10px 22px -6px rgba(188, 84, 53, 0.35);
+    }
+
+    .btn-outline-warm {
+      background-color: transparent;
+      color: #151719;
+      border: 1px solid #D5D2CA;
+      transition: all 0.2s ease;
+    }
+    .btn-outline-warm:hover {
+      background-color: #FFFFFF;
+      border-color: #151719;
+      transform: translateY(-1.5px);
+    }
+
+    /* Carte de projet épurée */
+    .project-card {
+      transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+      border: 1px solid #E7E5E0;
+    }
+    .project-card:hover {
+      border-color: #BC5435;
+      transform: translateY(-3px);
+      box-shadow: 0 14px 30px -10px rgba(0,0,0,0.06);
+    }
+
+    /* Typo d'accroche */
+    .display-title {
+      font-family: 'Instrument Serif', Georgia, serif;
+      font-weight: 400;
+      letter-spacing: -0.02em;
+    }
+  </style>
+</head>
+<body class="selection:bg-terracotta selection:text-white">
+
+  <!-- ================= EN-TÊTE ÉDITORIAL ================= -->
+  <header class="w-full pt-7 pb-4 px-6 sm:px-12 max-w-7xl mx-auto flex items-center justify-between">
+    
+    <!-- Monogramme TN Personnalisé : Signature typographique propre -->
+    <a href="#accueil" class="flex items-center gap-3 group" aria-label="Accueil Thery-Ryan Ndzobe">
+      <div class="w-10 h-10 rounded-full bg-brandInk flex items-center justify-center text-white transition-all duration-300 group-hover:bg-terracotta group-hover:rotate-6">
+        <span class="font-serif italic text-xl font-bold tracking-tight">TN</span>
+      </div>
+      <div class="hidden sm:block">
+        <span class="text-sm font-bold tracking-tight text-brandInk group-hover:text-terracotta transition">Thery-Ryan NDZOBE</span>
+        <span class="block text-[10px] font-mono uppercase tracking-wider text-brandMuted">Apprenti Ingénieur</span>
+      </div>
+    </a>
+
+    <!-- Navigation minimaliste et aérée -->
+    <nav class="flex items-center gap-6 sm:gap-8">
+      <a href="#projets" class="text-xs sm:text-sm font-medium text-brandMuted hover:text-brandInk transition">Projets</a>
+      <a href="#parcours" class="text-xs sm:text-sm font-medium text-brandMuted hover:text-brandInk transition">Parcours</a>
+      <button onclick="openCvModal()" class="text-xs sm:text-sm font-medium text-brandMuted hover:text-brandInk transition">CV</button>
+      
+      <!-- Bouton Contact distinctif -->
+      <a href="#contact" class="px-5 py-2.5 rounded-full text-xs font-semibold btn-editorial">
+        Me contacter
+      </a>
+    </nav>
+  </header>
+
+  <main>
+    <!-- ================= HERO SECTION : INSPIRATION ÉDITORIALE CHAUDE ================= -->
+    <section id="accueil" class="pt-12 sm:pt-20 pb-20 px-6 sm:px-12 max-w-7xl mx-auto">
+      <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-16 items-center">
+        
+        <!-- Texte d'accueil fluide et direct -->
+        <div class="lg:col-span-7 space-y-6">
+          
+          <div class="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-warmSand text-brandInk text-xs font-medium">
+            <span class="w-2 h-2 rounded-full bg-emerald-500 animate-pulse"></span>
+            <span>Recherche d'alternance 3 ans • Polytech Montpellier</span>
+          </div>
+
+          <h1 class="display-title text-5xl sm:text-6xl lg:text-7xl leading-[1.04] text-brandInk">
+            Bonjour, je suis <span class="italic text-terracotta">Thery-Ryan</span>.
+          </h1>
+
+          <p class="text-lg sm:text-xl text-brandMuted font-light leading-relaxed max-w-xl">
+            Apprenti en conception électrique & systèmes industriels chez <strong class="text-brandInk font-semibold">Annealsys</strong> (Groupe ECM), je conçois des architectures haute technologie et me prépare au cycle ingénieur en robotique et automatique.
+          </p>
+
+          <div class="flex flex-wrap items-center gap-4 pt-3">
+            <a href="#projets" class="btn-editorial px-7 py-3.5 rounded-full text-xs font-semibold flex items-center gap-2">
+              <span>Découvrir mes réalisations</span>
+              <i data-lucide="arrow-down" class="w-3.5 h-3.5"></i>
+            </a>
+            <button onclick="openCvModal()" class="btn-outline-warm px-6 py-3.5 rounded-full text-xs font-semibold flex items-center gap-2">
+              <span>Consulter mon CV</span>
+              <i data-lucide="file-text" class="w-3.5 h-3.5"></i>
+            </button>
+          </div>
+
+          <div class="pt-6 border-t border-cardBorder flex items-center gap-6 text-xs text-brandMuted font-mono">
+            <div><strong class="text-brandInk">Localisation :</strong> Montpellier & Poitiers</div>
+            <div>•</div>
+            <div><strong class="text-brandInk">Disponibilité :</strong> Rentrée 2026/2027</div>
+          </div>
+
+        </div>
+
+        <!-- Grand Portrait Éditorial Arrondi (Inspiré du layout Adri) -->
+        <div class="lg:col-span-5 flex justify-center lg:justify-end">
+          <div class="w-full max-w-sm sm:max-w-md aspect-[4/5] portrait-frame group relative">
+            <img 
+              id="userHeroPhoto"
+              src="https://lh3.googleusercontent.com/gg/AJWXcNm4B0F2Hn7a2uWfQvB_u38N82Z6k18L7Z5U0a8V3f3O5V8_E9Iq9V4O0K6R4_7W6R2X3A8L4V1_S0=s1000" 
+              onerror="this.onerror=null; this.src='https://placehold.co/800x1000/E8E5DF/151719?text=Thery-Ryan+NDZOBE';"
+              alt="Thery-Ryan NDZOBE"
+              class="w-full h-full object-cover object-center filter grayscale-[15%] group-hover:grayscale-0 group-hover:scale-102 transition duration-700 ease-out"
+            >
+            <div class="absolute bottom-4 left-4 right-4 p-3 rounded-2xl bg-white/90 backdrop-blur-md border border-white/50 text-[11px] text-brandInk flex items-center justify-between shadow-sm">
+              <span class="font-medium">Dessinateur-Projeteur Électrique</span>
+              <span class="font-mono text-terracotta font-semibold">SEE Electrical</span>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- ================= INDICATEURS SIGNIFICATIFS (VOS VRAIES FORCES) ================= -->
+    <section class="py-12 border-y border-cardBorder bg-surfaceLight">
+      <div class="max-w-7xl mx-auto px-6 sm:px-12">
+        
+        <div class="grid grid-cols-2 lg:grid-cols-4 gap-8 lg:gap-10">
+          
+          <!-- Indicateur 1 : Thymio Robotique -->
+          <div class="space-y-1.5 border-l-2 border-terracotta pl-4">
+            <div class="text-3xl sm:text-4xl font-serif text-brandInk">3<sup class="text-lg">e</sup> Place</div>
+            <div class="text-xs font-semibold text-brandInk">Concours Robotique Thymio</div>
+            <p class="text-[11px] text-brandMuted leading-snug">Navigation autonome, évitement d'obstacles & suivi de ligne (Python, Aseba, VPL — 15/20).</p>
+          </div>
+
+          <!-- Indicateur 2 : Semi-conducteur Annealsys -->
+          <div class="space-y-1.5 border-l-2 border-cardBorder pl-4">
+            <div class="text-3xl sm:text-4xl font-serif text-brandInk">1500°C</div>
+            <div class="text-xs font-semibold text-brandInk">Fours Haute Température</div>
+            <p class="text-[11px] text-brandMuted leading-snug">Traitement thermique rapide (RTP) : schémas puissance 400V et commande chez Annealsys.</p>
+          </div>
+
+          <!-- Indicateur 3 : Baccalauréat Mention Bien -->
+          <div class="space-y-1.5 border-l-2 border-cardBorder pl-4">
+            <div class="text-3xl sm:text-4xl font-serif text-brandInk">Mention Bien</div>
+            <div class="text-xs font-semibold text-brandInk">Baccalauréat Scientifique</div>
+            <p class="text-[11px] text-brandMuted leading-snug">Spécialités Mathématiques & Physique au Lycée Français Michel Montaigne du Gabon.</p>
+          </div>
+
+          <!-- Indicateur 4 : Alternance Ingénieur -->
+          <div class="space-y-1.5 border-l-2 border-cardBorder pl-4">
+            <div class="text-3xl sm:text-4xl font-serif text-terracotta">3 Ans</div>
+            <div class="text-xs font-semibold text-brandInk">Contrat d'Apprentissage</div>
+            <p class="text-[11px] text-brandMuted leading-snug">Parcours ingénieur visé à Polytech Montpellier en automatique, robotique & électronique.</p>
+          </div>
+
+        </div>
+
+      </div>
+    </section>
+
+    <!-- ================= SECTION PROJETS CHOISIS ================= -->
+    <section id="projets" class="py-24 px-6 sm:px-12 max-w-7xl mx-auto">
+      
+      <div class="flex flex-col sm:flex-row sm:items-end justify-between mb-14 gap-4">
+        <div>
+          <span class="text-xs font-mono uppercase tracking-widest text-terracotta font-semibold">Réalisations & Travaux</span>
+          <h2 class="display-title text-4xl sm:text-5xl text-brandInk mt-2">Projets techniques</h2>
+        </div>
+        <p class="text-xs sm:text-sm text-brandMuted max-w-md">
+          Chaque projet reflète une immersion directe face à des contraintes physiques : de la programmation robotique jusqu'aux armoires sous vide pour semi-conducteurs.
+        </p>
+      </div>
+
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+        
+        <!-- Carte 1 : Concours Robot Thymio -->
+        <div class="project-card bg-surfaceLight rounded-3xl p-8 flex flex-col justify-between group">
+          <div class="space-y-4">
+            <div class="flex items-center justify-between">
+              <span class="text-[11px] font-mono uppercase tracking-wider text-terracotta font-semibold">Robotique Autonome • Oct. 2024</span>
+              <span class="text-xs font-mono px-2.5 py-1 rounded-full bg-stoneBg border border-cardBorder text-brandInk">3ᵉ Prix</span>
+            </div>
+            
+            <h3 class="text-2xl font-bold text-brandInk group-hover:text-terracotta transition">
+              Concours de Programmation du Robot Thymio
+            </h3>
+            
+            <p class="text-xs sm:text-sm text-brandMuted leading-relaxed">
+              Programmation en équipe d'un robot mobile autonome destiné à suivre des trajectoires complexes au sol, contourner les obstacles imprévus et atteindre la zone cible. Optimisation algorithmique avec trois langages (VPL, Aseba et Python).
+            </p>
+
+            <div class="flex flex-wrap gap-2 pt-2">
+              <span class="text-[11px] font-mono px-2.5 py-1 rounded-md bg-warmSand text-brandInk">Python</span>
+              <span class="text-[11px] font-mono px-2.5 py-1 rounded-md bg-warmSand text-brandInk">Aseba</span>
+              <span class="text-[11px] font-mono px-2.5 py-1 rounded-md bg-warmSand text-brandInk">Capteurs IR</span>
+              <span class="text-[11px] font-mono px-2.5 py-1 rounded-md bg-warmSand text-brandInk">Note : 15/20</span>
+            </div>
+          </div>
+
+          <div class="pt-8">
+            <button onclick="openProjectModal('thymio')" class="w-full py-3 rounded-full text-xs font-semibold btn-outline-warm flex items-center justify-center gap-2">
+              <span>Voir le détail du concours</span>
+              <i data-lucide="arrow-right" class="w-3.5 h-3.5"></i>
+            </button>
+          </div>
+        </div>
+
+        <!-- Carte 2 : Annealsys AS-ONE RTP -->
+        <div class="project-card bg-surfaceLight rounded-3xl p-8 flex flex-col justify-between group">
+          <div class="space-y-4">
+            <div class="flex items-center justify-between">
+              <span class="text-[11px] font-mono uppercase tracking-wider text-terracotta font-semibold">Semi-conducteurs • Annealsys</span>
+              <span class="text-xs font-mono px-2.5 py-1 rounded-full bg-stoneBg border border-cardBorder text-brandInk">Industriel</span>
+            </div>
+            
+            <h3 class="text-2xl font-bold text-brandInk group-hover:text-terracotta transition">
+              Schémas Électriques & Sécurités Fours AS-ONE
+            </h3>
+            
+            <p class="text-xs sm:text-sm text-brandMuted leading-relaxed">
+              Conception intégrale au Bureau d'Études sous SEE Electrical Expert : folios de distribution 400V (puissance des lampes à 1500°C, pompes turbo à vide), régulation 24VDC, cartographie d'entrées/sorties Beckhoff et chaînes d'arrêts d'urgence normées.
+            </p>
+
+            <div class="flex flex-wrap gap-2 pt-2">
+              <span class="text-[11px] font-mono px-2.5 py-1 rounded-md bg-warmSand text-brandInk">SEE Electrical</span>
+              <span class="text-[11px] font-mono px-2.5 py-1 rounded-md bg-warmSand text-brandInk">Normes CE/UL</span>
+              <span class="text-[11px] font-mono px-2.5 py-1 rounded-md bg-warmSand text-brandInk">Beckhoff E/S</span>
+              <span class="text-[11px] font-mono px-2.5 py-1 rounded-md bg-warmSand text-brandInk">SolidWorks</span>
+            </div>
+          </div>
+
+          <div class="pt-8">
+            <button onclick="openProjectModal('annealsys')" class="w-full py-3 rounded-full text-xs font-semibold btn-outline-warm flex items-center justify-center gap-2">
+              <span>Consulter l'architecture</span>
+              <i data-lucide="arrow-right" class="w-3.5 h-3.5"></i>
+            </button>
+          </div>
+        </div>
+
+        <!-- Carte 3 : MPPT DsPIC33 -->
+        <div class="project-card bg-surfaceLight rounded-3xl p-8 flex flex-col justify-between group">
+          <div class="space-y-4">
+            <div class="flex items-center justify-between">
+              <span class="text-[11px] font-mono uppercase tracking-wider text-terracotta font-semibold">Systèmes Embarqués • BUT2</span>
+              <span class="text-xs font-mono px-2.5 py-1 rounded-full bg-stoneBg border border-cardBorder text-brandInk">SAÉ Concevoir</span>
+            </div>
+            
+            <h3 class="text-2xl font-bold text-brandInk group-hover:text-terracotta transition">
+              Asservissement MPPT P&O sur Microcontrôleur DsPIC33
+            </h3>
+            
+            <p class="text-xs sm:text-sm text-brandMuted leading-relaxed">
+              Implémentation en langage C (MPLABX / compilateur XC16) de l'algorithme Perturb & Observe sur microcontrôleur Microchip. Pilotage en boucle fermée du rapport cyclique d'un hacheur boost avec dérisquage préalable sous simulateur dSPACE et Matlab Simulink.
+            </p>
+
+            <div class="flex flex-wrap gap-2 pt-2">
+              <span class="text-[11px] font-mono px-2.5 py-1 rounded-md bg-warmSand text-brandInk">Langage C</span>
+              <span class="text-[11px] font-mono px-2.5 py-1 rounded-md bg-warmSand text-brandInk">DsPIC33</span>
+              <span class="text-[11px] font-mono px-2.5 py-1 rounded-md bg-warmSand text-brandInk">dSPACE</span>
+              <span class="text-[11px] font-mono px-2.5 py-1 rounded-md bg-warmSand text-brandInk">Simulink</span>
+            </div>
+          </div>
+
+          <div class="pt-8">
+            <button onclick="openProjectModal('mppt')" class="w-full py-3 rounded-full text-xs font-semibold btn-outline-warm flex items-center justify-center gap-2">
+              <span>Détails de l'algorithme</span>
+              <i data-lucide="arrow-right" class="w-3.5 h-3.5"></i>
+            </button>
+          </div>
+        </div>
+
+        <!-- Carte 4 : Variateur HVAC Altivar -->
+        <div class="project-card bg-surfaceLight rounded-3xl p-8 flex flex-col justify-between group">
+          <div class="space-y-4">
+            <div class="flex items-center justify-between">
+              <span class="text-[11px] font-mono uppercase tracking-wider text-terracotta font-semibold">Automatisme & Réseaux • BUT2</span>
+              <span class="text-xs font-mono px-2.5 py-1 rounded-full bg-stoneBg border border-cardBorder text-brandInk">SAÉ Maintenir</span>
+            </div>
+            
+            <h3 class="text-2xl font-bold text-brandInk group-hover:text-terracotta transition">
+              Régulation HVAC & Variateur Schneider ATV320
+            </h3>
+            
+            <p class="text-xs sm:text-sm text-brandMuted leading-relaxed">
+              Dimensionnement et mise en service d'un coffret de commande de ventilation industrielle : paramétrage de la loi U/f sous SoMove, séquençage horaire sur automate RS Logic, câblage conforme NFC 15-100 et élaboration d'algorigrammes de maintenance.
+            </p>
+
+            <div class="flex flex-wrap gap-2 pt-2">
+              <span class="text-[11px] font-mono px-2.5 py-1 rounded-md bg-warmSand text-brandInk">SoMove</span>
+              <span class="text-[11px] font-mono px-2.5 py-1 rounded-md bg-warmSand text-brandInk">ATV320</span>
+              <span class="text-[11px] font-mono px-2.5 py-1 rounded-md bg-warmSand text-brandInk">RS Logic</span>
+              <span class="text-[11px] font-mono px-2.5 py-1 rounded-md bg-warmSand text-brandInk">NFC 15-100</span>
+            </div>
+          </div>
+
+          <div class="pt-8">
+            <button onclick="openProjectModal('hvac')" class="w-full py-3 rounded-full text-xs font-semibold btn-outline-warm flex items-center justify-center gap-2">
+              <span>Voir la démarche</span>
+              <i data-lucide="arrow-right" class="w-3.5 h-3.5"></i>
+            </button>
+          </div>
+        </div>
+
+      </div>
+
+    </section>
+
+    <!-- ================= SECTION PARCOURS & PHILOSOPHIE ================= -->
+    <section id="parcours" class="py-24 border-t border-cardBorder bg-surfaceLight">
+      <div class="max-w-4xl mx-auto px-6 sm:px-8">
+        
+        <span class="text-xs font-mono uppercase tracking-widest text-terracotta font-semibold">Profil & Trajectoire</span>
+        <h2 class="display-title text-4xl sm:text-5xl text-brandInk mt-2 mb-8">De l'IUT au Cycle Ingénieur</h2>
+
+        <div class="space-y-6 text-sm sm:text-base text-brandMuted leading-relaxed">
+          <p>
+            Mon approche technique s'est construite sur le terrain : en alternance chez <strong>Annealsys</strong>, chaque schéma tracé sous <em>SEE Electrical</em> se confronte directement aux câbleurs d'atelier, aux contraintes thermiques extrêmes (1500°C) et aux exigences des concepteurs mécaniques sous <em>SolidWorks</em>.
+          </p>
+          <p>
+            Cette habitude de la rigueur et du dérisquage méthodique alimente ma passion pour la <strong>robotique et l'automatique</strong>. Qu'il s'agisse de programmer la trajectoire réactive d'un robot mobile comme Thymio ou de cadencer un microcontrôleur DsPIC33 pour stabiliser une chaîne de puissance, mon objectif est d'acquérir une vision complète alliant logiciel embarqué et actionnement physique.
+          </p>
+          <p>
+            Sur le plan personnel, ma pratique assidue de la <strong>boxe anglaise</strong> et du <strong>jujitsu</strong> depuis plusieurs années m'apporte la discipline, le sens de l'anticipation et la lucidité nécessaires pour piloter des projets complexes avec constance.
+          </p>
+        </div>
+
+        <!-- Jalons de formation -->
+        <div class="mt-14 space-y-6 border-l border-cardBorder pl-6">
+          
+          <div class="relative">
+            <span class="absolute -left-[31px] top-1.5 w-2.5 h-2.5 rounded-full bg-terracotta"></span>
+            <div class="text-xs font-mono text-terracotta font-semibold">2027 — 2030 (Visé)</div>
+            <h4 class="text-base font-bold text-brandInk">Cycle Ingénieur en Alternance (3 ans)</h4>
+            <p class="text-xs text-brandMuted">Polytech Montpellier • Spécialité Systèmes Robotiques & Automatiques</p>
+          </div>
+
+          <div class="relative">
+            <span class="absolute -left-[31px] top-1.5 w-2.5 h-2.5 rounded-full bg-brandInk"></span>
+            <div class="text-xs font-mono text-brandMuted font-semibold">2024 — 2027</div>
+            <h4 class="text-base font-bold text-brandInk">BUT Génie Électrique & Informatique Industrielle (GEII)</h4>
+            <p class="text-xs text-brandMuted">IUT de Poitiers • Parcours Électricité & Maîtrise de l'Énergie (En apprentissage)</p>
+          </div>
+
+          <div class="relative">
+            <span class="absolute -left-[31px] top-1.5 w-2.5 h-2.5 rounded-full bg-cardBorder"></span>
+            <div class="text-xs font-mono text-brandMuted font-semibold">2024</div>
+            <h4 class="text-base font-bold text-brandInk">Baccalauréat Général — Mention Bien</h4>
+            <p class="text-xs text-brandMuted">Lycée Français Michel Montaigne (Gabon) • Spécialités Mathématiques & Physique</p>
+          </div>
+
+        </div>
+
+      </div>
+    </section>
+
+    <!-- ================= SECTION CONTACT DIRECTE ================= -->
+    <section id="contact" class="py-24 px-6 sm:px-12 max-w-4xl mx-auto">
+      
+      <div class="text-center mb-12">
+        <span class="text-xs font-mono uppercase tracking-widest text-terracotta font-semibold">Contact</span>
+        <h2 class="display-title text-4xl sm:text-5xl text-brandInk mt-2">Échangeons sur votre projet</h2>
+        <p class="text-xs sm:text-sm text-brandMuted mt-3 max-w-md mx-auto">
+          Je suis ouvert aux échanges concernant des opportunités d'alternance de 3 ans en robotique, automatique et génie électrique.
+        </p>
+      </div>
+
+      <div class="bg-surfaceLight rounded-3xl border border-cardBorder p-8 sm:p-10 shadow-sm">
+        
+        <div class="grid grid-cols-1 sm:grid-cols-2 gap-4 mb-8">
+          <div class="p-4 rounded-2xl bg-stoneBg border border-cardBorder">
+            <span class="text-[10px] font-mono uppercase text-brandMuted">E-mail personnel</span>
+            <div class="text-xs sm:text-sm font-bold text-brandInk mt-1">
+              <a href="mailto:theryryan.ndzobe@gmail.com" class="hover:text-terracotta transition">theryryan.ndzobe@gmail.com</a>
+            </div>
+          </div>
+
+          <div class="p-4 rounded-2xl bg-stoneBg border border-cardBorder">
+            <span class="text-[10px] font-mono uppercase text-brandMuted">Téléphone direct</span>
+            <div class="text-xs sm:text-sm font-bold text-brandInk mt-1">
+              <a href="tel:+33679003198" class="hover:text-terracotta transition">+33 6 79 00 31 98</a>
+            </div>
+          </div>
+        </div>
+
+        <form onsubmit="handleContactSubmit(event)" class="space-y-4">
+          <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+            <div>
+              <label class="block text-[11px] font-semibold text-brandInk mb-1.5">Votre Nom / Entreprise</label>
+              <input type="text" id="senderName" required placeholder="Ex. Sophie Bernard — Entreprise" 
+                     class="w-full px-4 py-3 rounded-xl bg-stoneBg border border-cardBorder text-xs text-brandInk focus:outline-none focus:border-brandInk transition">
+            </div>
+            <div>
+              <label class="block text-[11px] font-semibold text-brandInk mb-1.5">Votre E-mail</label>
+              <input type="email" id="senderEmail" required placeholder="contact@entreprise.com" 
+                     class="w-full px-4 py-3 rounded-xl bg-stoneBg border border-cardBorder text-xs text-brandInk focus:outline-none focus:border-brandInk transition">
+            </div>
+          </div>
+
+          <div>
+            <label class="block text-[11px] font-semibold text-brandInk mb-1.5">Votre Message</label>
+            <textarea id="senderMsg" rows="4" required placeholder="Bonjour Thery-Ryan, nous avons découvert vos réalisations et souhaiterions échanger..." 
+                      class="w-full px-4 py-3 rounded-xl bg-stoneBg border border-cardBorder text-xs text-brandInk focus:outline-none focus:border-brandInk transition resize-none"></textarea>
+          </div>
+
+          <button type="submit" class="btn-editorial w-full py-3.5 rounded-xl text-xs font-semibold flex items-center justify-center gap-2">
+            <i data-lucide="send" class="w-3.5 h-3.5"></i>
+            <span>Envoyer le message directement</span>
+          </button>
+        </form>
+
+      </div>
+
+    </section>
+  </main>
+
+  <!-- ================= FOOTER SOBRE ================= -->
+  <footer class="py-12 border-t border-cardBorder bg-stoneBg text-xs text-brandMuted">
+    <div class="max-w-7xl mx-auto px-6 sm:px-12 flex flex-col sm:flex-row items-center justify-between gap-4">
+      <div class="flex items-center gap-2.5">
+        <span class="w-6 h-6 rounded-full bg-brandInk text-white text-[10px] font-serif italic flex items-center justify-center font-bold">TN</span>
+        <span class="text-brandInk font-semibold">Thery-Ryan NDZOBE</span>
+        <span>•</span>
+        <span>Alternance Ingénieur 2026/2027</span>
+      </div>
+
+      <div class="flex items-center gap-6">
+        <button onclick="openCvModal()" class="hover:text-brandInk transition">Curriculum Vitæ</button>
+        <a href="#accueil" class="hover:text-brandInk transition">Haut de page ↑</a>
+      </div>
+    </div>
+  </footer>
+
+  <!-- ================= MODALE DE DÉTAIL DE PROJET ================= -->
+  <div id="projectModal" class="fixed inset-0 z-50 hidden bg-brandInk/50 backdrop-blur-sm flex items-center justify-center p-4">
+    <div class="bg-surfaceLight max-w-2xl w-full rounded-3xl p-6 sm:p-10 relative max-h-[90vh] overflow-y-auto border border-cardBorder shadow-2xl">
+      <button onclick="closeProjectModal()" class="absolute top-5 right-5 p-2 rounded-full text-brandMuted hover:text-brandInk hover:bg-stoneBg" aria-label="Fermer">
+        <i data-lucide="x" class="w-5 h-5"></i>
+      </button>
+      <div id="modalBody">
+        <!-- Rempli en JS -->
+      </div>
+    </div>
+  </div>
+
+  <!-- ================= MODALE VISUALISEUR DU CV PROFESSIONNEL ================= -->
+  <div id="cvModal" class="fixed inset-0 z-50 hidden bg-brandInk/50 backdrop-blur-sm flex items-center justify-center p-4">
+    <div class="bg-surfaceLight max-w-3xl w-full rounded-3xl relative max-h-[92vh] flex flex-col border border-cardBorder shadow-2xl overflow-hidden">
+      
+      <!-- Barre d'outils du CV -->
+      <div class="p-4 px-6 bg-stoneBg border-b border-cardBorder flex items-center justify-between">
+        <div class="flex items-center gap-2.5">
+          <span class="w-7 h-7 rounded-full bg-brandInk text-white flex items-center justify-center font-serif italic text-xs font-bold">TN</span>
+          <div>
+            <h4 class="text-xs font-bold text-brandInk">Curriculum Vitæ — Thery-Ryan NDZOBE</h4>
+            <span class="text-[10px] font-mono text-brandMuted">Alternance 3 ans • Polytech Montpellier</span>
+          </div>
+        </div>
+        <div class="flex items-center gap-2">
+          <button onclick="window.print()" class="px-3.5 py-1.5 rounded-full text-xs font-semibold btn-editorial flex items-center gap-1.5">
+            <i data-lucide="printer" class="w-3.5 h-3.5"></i>
+            <span>Imprimer</span>
+          </button>
+          <button onclick="closeCvModal()" class="p-1.5 rounded-full text-brandMuted hover:text-brandInk" aria-label="Fermer">
+            <i data-lucide="x" class="w-5 h-5"></i>
+          </button>
+        </div>
+      </div>
+
+      <!-- Corps du CV épuré -->
+      <div class="p-8 sm:p-10 overflow-y-auto space-y-6 text-xs text-brandMuted leading-relaxed">
+        
+        <div class="border-b border-cardBorder pb-5 flex flex-col sm:flex-row justify-between sm:items-end gap-3">
+          <div>
+            <h1 class="display-title text-3xl text-brandInk">Thery-Ryan NDZOBE</h1>
+            <p class="text-xs font-semibold text-terracotta mt-0.5">Élève-Ingénieur en Alternance (3 ans)</p>
+            <p class="text-[11px] text-brandMuted">Robotique • Automatique • Génie Électrique</p>
+          </div>
+          <div class="text-left sm:text-right font-mono text-[11px] space-y-0.5">
+            <div>theryryan.ndzobe@gmail.com</div>
+            <div>+33 6 79 00 31 98</div>
+            <div>Montpellier & Poitiers</div>
+          </div>
+        </div>
+
+        <!-- Expérience Annealsys -->
+        <div>
+          <h2 class="text-xs font-mono uppercase tracking-wider text-brandInk font-bold border-b border-cardBorder pb-1 mb-2.5">
+            Expérience Industrielle Clé
+          </h2>
+          <div class="flex justify-between items-baseline font-bold text-brandInk text-xs">
+            <span>Alternant Dessinateur-Projeteur en Électrique & Automatisme</span>
+            <span class="font-mono text-[11px] text-brandMuted">2025 – 2027</span>
+          </div>
+          <div class="text-terracotta text-[11px] font-medium mb-1.5">Annealsys (Groupe ECM) — Montpellier</div>
+          <ul class="list-disc pl-4 space-y-1 text-[11px] text-brandMuted">
+            <li>Conception des schémas électriques sous <em>SEE Electrical Expert</em> pour fours RTP (chauffe ultra-rapide jusqu'à 1500°C sous vide).</li>
+            <li>Conception des folios de puissance 400V (lampes halogènes, transformateurs, pompes à vide turbomoléculaires).</li>
+            <li>Gestion des signaux 24VDC, adressage I/O automates Beckhoff, régulation thermique PID et instrumentation (jauges Pirani, vannes SMC).</li>
+            <li>Collaboration transversale continue avec les projeteurs mécaniques (SolidWorks) et l'atelier de câblage.</li>
+          </ul>
+        </div>
+
+        <!-- Projets techniques clés -->
+        <div>
+          <h2 class="text-xs font-mono uppercase tracking-wider text-brandInk font-bold border-b border-cardBorder pb-1 mb-2.5">
+            Projets & Compétitions Techniques
+          </h2>
+          <div class="space-y-2 text-[11px]">
+            <div>
+              <span class="font-bold text-brandInk">Concours Robotique Thymio (3ᵉ Place — Note 15/20) :</span> Programmation d'un robot mobile autonome en Python, Aseba et VPL. Traitement des capteurs infrarouges, suivi de ligne et évitement dynamique d'obstacles.
+            </div>
+            <div>
+              <span class="font-bold text-brandInk">Commande MPPT sur DsPIC33 (BUT GEII) :</span> Implémentation de l'algorithme Perturb & Observe en C (XC16 MPLABX) sur microcontrôleur Microchip avec dérisquage sous simulateur dSPACE et Matlab Simulink.
+            </div>
+            <div>
+              <span class="font-bold text-brandInk">Entraînement HVAC Schneider ATV320 :</span> Paramétrage de la loi U/f sous SoMove, régulation de débit automatisée jour/nuit sous RS Logic et câblage conforme NFC 15-100.
+            </div>
+          </div>
+        </div>
+
+        <!-- Formations -->
+        <div>
+          <h2 class="text-xs font-mono uppercase tracking-wider text-brandInk font-bold border-b border-cardBorder pb-1 mb-2.5">
+            Formation Académique
+          </h2>
+          <div class="space-y-2 text-[11px]">
+            <div>
+              <span class="font-bold text-brandInk">2027 — 2030 (Visé) : Diplôme d'Ingénieur en Robotique & Automatique</span> — Polytech Montpellier (Alternance 3 ans)
+            </div>
+            <div>
+              <span class="font-bold text-brandInk">2024 — 2027 : BUT Génie Électrique & Informatique Industrielle (GEII)</span> — IUT de Poitiers (Parcours Électricité et Maîtrise de l'Énergie)
+            </div>
+            <div>
+              <span class="font-bold text-brandInk">2024 : Baccalauréat Général Scientifique — Mention Bien</span> — Spécialités Mathématiques & Physique (Gabon)
+            </div>
+          </div>
+        </div>
+
+        <!-- Compétences & Sport -->
+        <div>
+          <h2 class="text-xs font-mono uppercase tracking-wider text-brandInk font-bold border-b border-cardBorder pb-1 mb-2.5">
+            Compétences & Engagements
+          </h2>
+          <div class="grid grid-cols-2 gap-4 text-[11px]">
+            <div><strong>Logiciels :</strong> SEE Electrical Expert, SoMove, MPLABX XC16, Matlab Simulink, RS Logic, SolidWorks (notions).</div>
+            <div><strong>Programmation :</strong> Langage C, Python, MicroPython, GRAFCET, Ladder.</div>
+            <div><strong>Langues :</strong> Français (maternelle), Anglais (technique B1/B2).</div>
+            <div><strong>Sports :</strong> Boxe anglaise, Jujitsu, musculation régulière.</div>
+          </div>
+        </div>
+
+      </div>
+
+    </div>
+  </div>
+
+  <!-- ================= SCRIPTS ================= -->
+  <script>
+    document.addEventListener('DOMContentLoaded', () => {
+      lucide.createIcons();
+    });
+
+    // Données des projets pour la modale
+    const projectsData = {
+      thymio: {
+        tag: "Concours Robotique • Octobre 2024",
+        title: "Concours de Programmation du Robot Thymio (3ᵉ Place)",
+        desc: "Défi robotique universitaire axé sur la programmation d'un mobile autonome confronté à un environnement inconnu.",
+        bullets: [
+          "Développement des algorithmes de suivi de ligne et de navigation réactive en combinant trois environnements (VPL, Aseba et Python).",
+          "Traitement et calibrage des capteurs de proximité infrarouges pour l'évitement dynamique d'obstacles fixes et mouvants.",
+          "Gestion du travail en équipe sous contrainte de temps pour atteindre la zone cible.",
+          "Classement final : 3ᵉ place au concours avec une note de 15 / 20 décernée par l'Université de Poitiers."
+        ],
+        tools: "Python, Aseba Studio, VPL, Algorithmes de contrôle réactif"
+      },
+      annealsys: {
+        tag: "Expérience Industrielle • Annealsys",
+        title: "Architecture Électrique des Réacteurs Thermiques AS-ONE",
+        desc: "Conception des dossiers de schémas électriques pour l'industrie mondiale des nanotechnologies et semi-conducteurs.",
+        bullets: [
+          "Folios de puissance 400V triphasé : pilotage des rampes de lampes halogènes (chauffe à 1500°C) et pompes turbomoléculaires à vide.",
+          "Folios de commande 24VDC : régulation PID multizone, pyromètres infrarouges, jauges de vide SMC/Pirani et bus de terrain.",
+          "Adressage des cartographies d'entrées/sorties pour automates industriels Beckhoff (modules EL1809, EL209).",
+          "Conception en synergie constante avec le bureau d'études mécanique sous SolidWorks et l'atelier de production."
+        ],
+        tools: "SEE Electrical Expert V5R2, Normes CE / UL, SolidWorks, Beckhoff I/O"
+      },
+      mppt: {
+        tag: "SAÉ C1 Concevoir • BUT GEII",
+        title: "Commande MPPT Perturb & Observe sur DsPIC33",
+        desc: "Conception et dérisquage d'un asservissement numérique de conversion d'énergie solaire.",
+        bullets: [
+          "Codage de l'algorithme Perturb & Observe (P&O) en langage C sur microcontrôleur Microchip dsPIC33FJ128MC802.",
+          "Configuration bas niveau des timers, interruptions et signaux PWM pour l'étage de puissance.",
+          "Modélisation et dérisquage préalable sur simulateur temps réel dSPACE et Matlab Simulink.",
+          "Conception d'une interface de supervision PC via protocole RS232 et filtrage du bruit de mesure CAN."
+        ],
+        tools: "Langage C (XC16 MPLABX), dsPIC33, Matlab Simulink, dSPACE"
+      },
+      hvac: {
+        tag: "SAÉ C3 Maintenir • BUT GEII",
+        title: "Pilotage & Maintenance Variateur Schneider ATV320",
+        desc: "Mise en service et maintenance préventive d'un système de conversion et gestion d'énergie.",
+        bullets: [
+          "Paramétrage sous le logiciel Schneider SoMove de la loi fréquence/tension (U/f) du variateur Altivar 212/ATV320.",
+          "Programmation d'un automate RS Logic pour la gestion horaire de modulation de débit d'extracteurs d'air (100% jour / 15% nuit).",
+          "Câblage méthodique d'un coffret 400V selon la norme NFC 15-100 (borniers, protections disjoncteurs, continuité de terre).",
+          "Élaboration d'un algorigramme de diagnostic de pannes et d'une recette client complète."
+        ],
+        tools: "Schneider Altivar ATV320, SoMove, RS Logic, NFC 15-100"
+      }
+    };
+
+    function openProjectModal(key) {
+      const data = projectsData[key];
+      if (!data) return;
+
+      const modalBody = document.getElementById('modalBody');
+      modalBody.innerHTML = `
+        <span class="text-xs font-mono uppercase tracking-widest text-terracotta font-semibold">${data.tag}</span>
+        <h3 class="display-title text-3xl text-brandInk mt-2 mb-3">${data.title}</h3>
+        <p class="text-xs sm:text-sm text-brandMuted leading-relaxed mb-6">${data.desc}</p>
+
+        <div class="bg-stoneBg rounded-2xl p-5 border border-cardBorder mb-6">
+          <div class="text-xs font-bold text-brandInk uppercase font-mono mb-3">Enjeux & Réalisations :</div>
+          <ul class="space-y-2 text-xs text-brandMuted">
+            ${data.bullets.map(b => `<li class="flex items-start gap-2.5"><span class="text-terracotta font-bold">•</span><span>${b}</span></li>`).join('')}
+          </ul>
+        </div>
+
+        <div class="p-3.5 bg-surfaceLight border border-cardBorder rounded-xl text-xs text-brandInk">
+          <strong class="font-mono uppercase text-[10px] text-brandMuted block mb-0.5">Outils & Technologies :</strong>
+          <span>${data.tools}</span>
+        </div>
+      `;
+
+      document.getElementById('projectModal').classList.remove('hidden');
+      lucide.createIcons();
+    }
+
+    function closeProjectModal() {
+      document.getElementById('projectModal').classList.add('hidden');
+    }
+
+    function openCvModal() {
+      document.getElementById('cvModal').classList.remove('hidden');
+      lucide.createIcons();
+    }
+
+    function closeCvModal() {
+      document.getElementById('cvModal').classList.add('hidden');
+    }
+
+    // Fermeture avec Échap
+    window.addEventListener('keydown', (e) => {
+      if (e.key === 'Escape') {
+        closeProjectModal();
+        closeCvModal();
+      }
+    });
+
+    // Envoi du formulaire de contact
+    function handleContactSubmit(e) {
+      e.preventDefault();
+      const name = document.getElementById('senderName').value;
+      const email = document.getElementById('senderEmail').value;
+      const msg = document.getElementById('senderMsg').value;
+
+      const mailto = `mailto:theryryan.ndzobe@gmail.com?subject=${encodeURIComponent(`[Alternance Ingénieur 3 ans] Message de ${name}`)}&body=${encodeURIComponent(`Nom : ${name}\nEmail : ${email}\n\nMessage :\n${msg}`)}`;
+      window.location.href = mailto;
+    }
+  </script>
+</body>
+</html>
