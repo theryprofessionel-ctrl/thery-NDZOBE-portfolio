@@ -70,7 +70,7 @@
 
         <p class="text-base sm:text-lg text-slate-600 leading-relaxed font-normal">
           Diplômé d'un <strong>BUT GEII</strong> (Génie Électrique et Informatique Industrielle) et fort de <strong>2 ans d'expérience en alternance</strong> comme <strong>Dessinateur-Projeteur en Électricité</strong> chez <strong>ANNEALSYS</strong> (Groupe ECM). 
-          Je conçois l'architecture électrique d'équipements de semi-conducteurs et recherche une <strong>alternance de 3 ans</strong> pour mon cycle d'<strong>ingénieur en Génie Électrique, Automatique & Robotique</strong>.
+          Je conçois l'architecture électrique d'équipements de semi-conducteurs de pointe et recherche une <strong>alternance de 3 ans</strong> pour mon cycle d'<strong>ingénieur en Génie Électrique, Automatique & Robotique</strong>.
         </p>
 
         <!-- Actions -->
@@ -100,22 +100,15 @@
         </div>
       </div>
 
-      <!-- Photo profil technique sur armoire -->
+      <!-- Photo profil technique nette et sans aucun texte par dessus -->
       <div class="lg:col-span-5 flex justify-center">
         <div class="relative w-full max-w-xs sm:max-w-sm aspect-[4/5] rounded-3xl overflow-hidden border border-slate-200 shadow-xl bg-slate-100">
           <img 
-            src="photoportfolio.jpg" 
+            src="photoportfolio.png" 
             alt="Thery NDZOBE - Câblage armoire électrique" 
             class="w-full h-full object-cover object-center"
-            onerror="this.onerror=null; this.parentElement.innerHTML='<div class=\'w-full h-full flex flex-col items-center justify-center bg-slate-200 text-slate-500 p-6 text-center text-sm font-medium\'><i data-lucide=\'wrench\' class=\'w-16 h-16 text-slate-400 mb-2\'></i>Déposez votre fichier <b>photoportfolio.jpg</b> sur GitHub</div>'; lucide.createIcons();"
+            onerror="this.onerror=null; this.src='photoportfolio.jpg';"
           >
-          <div class="absolute bottom-4 inset-x-4 bg-white/95 backdrop-blur-md p-3.5 rounded-2xl border border-white/60 shadow-sm flex items-center justify-between">
-            <div>
-              <p class="text-[10px] uppercase tracking-wider text-slate-400 font-bold">Intervention Atelier</p>
-              <p class="text-xs font-bold text-slate-900">Armoire Basse Tension & CAO</p>
-            </div>
-            <span class="text-[11px] font-mono text-[#0077B5] bg-sky-50 px-2.5 py-1 rounded-md font-semibold">SEE Electrical</span>
-          </div>
         </div>
       </div>
 
@@ -141,141 +134,34 @@
       </div>
     </section>
 
-    <!-- PROJETS EN AVANT (FORMAT JÉRÉMIE) -->
+    <!-- PROJETS EN AVANT (IMAGES TOTALEMENT DÉGAGÉES SANS BANDEAU PAR DESSUS) -->
     <section id="projets" class="space-y-8 mb-24">
       <div class="flex items-end justify-between border-b border-slate-200/80 pb-4">
         <div>
           <h2 class="text-2xl font-bold text-[#0B2545]">Projets en avant</h2>
-          <p class="text-sm text-slate-500 mt-1">Réalisations industrielles, projets de conception et bancs de régulation.</p>
+          <p class="text-sm text-slate-500 mt-1">Réalisations industrielles chez Annealsys et SAÉ universitaires réelles.</p>
         </div>
-        <span class="text-xs font-mono text-slate-400">Projets industriels & SAÉ BUT2</span>
+        <span class="text-xs font-mono text-slate-400">6 réalisations</span>
       </div>
 
       <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
 
-        <!-- Projet 1 : SAÉ 4 MPPT dsPIC33 -->
+        <!-- Projet 1 : Armoire Commande & Puissance Annealsys -->
         <article class="bg-white rounded-2xl border border-slate-200/80 overflow-hidden card-project flex flex-col justify-between">
           <div>
-            <div class="relative aspect-[16/10] bg-slate-100 overflow-hidden">
-              <img 
-                src="CARTEMPPT.png" 
-                alt="Carte dsPIC33 pour asservissement MPPT" 
-                class="w-full h-full object-cover"
-                onerror="this.onerror=null; this.parentElement.innerHTML='<div class=\'w-full h-full flex flex-col items-center justify-center text-slate-400 p-4 text-xs font-mono text-center\'><i data-lucide=\'zap\' class=\'w-8 h-8 mb-1 text-slate-400\'></i>CARTEMPPT.png</div>'; lucide.createIcons();"
-              >
-              <div class="absolute top-3 left-3">
-                <span class="text-[10px] font-bold uppercase tracking-wider px-2.5 py-1 rounded bg-[#0077B5] text-white">SAÉ 4.EME.01 · Conception</span>
-              </div>
-            </div>
-
-            <div class="p-5">
-              <h3 class="text-base font-bold text-slate-900 mb-1.5 leading-snug">Polarisation Panneau Photovoltaïque (MPPT)</h3>
-              <p class="text-xs text-slate-600 leading-relaxed mb-3">
-                Implémentation de l'algorithme <em>Perturb & Observe</em> en langage C sur microcontrôleur <strong>dsPIC33FJ128MC802</strong> (MPLABX / XC16). Dimensionnement d'un hacheur DC/DC et validation sur simulateur <strong>dSPACE / Simulink</strong>.
-              </p>
-              <div class="text-[11px] text-slate-500 space-y-1 bg-slate-50 p-2.5 rounded-lg border border-slate-100">
-                <p>• <strong>Durée</strong> : 40h (TD + TP + autonomie en binôme)</p>
-                <p>• <strong>Outils</strong> : dsPIC33, dSPACE, Simulink, XC16</p>
-              </div>
-            </div>
-          </div>
-
-          <div class="px-5 pb-5 pt-3 border-t border-slate-100 flex flex-wrap gap-1.5">
-            <span class="text-[10px] font-mono bg-slate-100 text-slate-700 px-2 py-0.5 rounded">dsPIC33</span>
-            <span class="text-[10px] font-mono bg-slate-100 text-slate-700 px-2 py-0.5 rounded">Langage C</span>
-            <span class="text-[10px] font-mono bg-slate-100 text-slate-700 px-2 py-0.5 rounded">Simulink</span>
-            <span class="text-[10px] font-mono bg-slate-100 text-slate-700 px-2 py-0.5 rounded">MPPT P&O</span>
-          </div>
-        </article>
-
-        <!-- Projet 2 : SAÉ 3 Variateur ATV320 HVAC -->
-        <article class="bg-white rounded-2xl border border-slate-200/80 overflow-hidden card-project flex flex-col justify-between">
-          <div>
-            <div class="relative aspect-[16/10] bg-slate-100 overflow-hidden">
-              <img 
-                src="COFFRETELECVARIATEUR.png" 
-                alt="Coffret variateur Schneider ATV320 HVAC" 
-                class="w-full h-full object-cover"
-                onerror="this.onerror=null; this.parentElement.innerHTML='<div class=\'w-full h-full flex flex-col items-center justify-center text-slate-400 p-4 text-xs font-mono text-center\'><i data-lucide=\'settings\' class=\'w-8 h-8 mb-1 text-slate-400\'></i>COFFRETELECVARIATEUR.png</div>'; lucide.createIcons();"
-              >
-              <div class="absolute top-3 left-3">
-                <span class="text-[10px] font-bold uppercase tracking-wider px-2.5 py-1 rounded bg-[#0B2545] text-white">SAÉ 3.EME.01 · Maintenir</span>
-              </div>
-            </div>
-
-            <div class="p-5">
-              <h3 class="text-base font-bold text-slate-900 mb-1.5 leading-snug">Coffret Variateur Schneider ATV320 (HVAC)</h3>
-              <p class="text-xs text-slate-600 leading-relaxed mb-3">
-                Installation d'un variateur de vitesse HVAC sur extracteurs d'air (100% jour / 15% nuit). Schémas sous <strong>SEE Electrical</strong>, paramétrage <strong>SoMove</strong>, automate <strong>RS Logic</strong> et sécurisation coup de poing EN 13849.
-              </p>
-              <div class="text-[11px] text-slate-500 space-y-1 bg-slate-50 p-2.5 rounded-lg border border-slate-100">
-                <p>• <strong>Durée</strong> : 45h de projet technique en binôme</p>
-                <p>• <strong>AC24.01</strong> : Câblage coffret conforme NFC 15-100 (4/4)</p>
-              </div>
-            </div>
-          </div>
-
-          <div class="px-5 pb-5 pt-3 border-t border-slate-100 flex flex-wrap gap-1.5">
-            <span class="text-[10px] font-mono bg-slate-100 text-slate-700 px-2 py-0.5 rounded">ATV320</span>
-            <span class="text-[10px] font-mono bg-slate-100 text-slate-700 px-2 py-0.5 rounded">SoMove</span>
-            <span class="text-[10px] font-mono bg-slate-100 text-slate-700 px-2 py-0.5 rounded">RS Logic</span>
-            <span class="text-[10px] font-mono bg-slate-100 text-slate-700 px-2 py-0.5 rounded">NFC 15-100</span>
-          </div>
-        </article>
-
-        <!-- Projet 3 : SAÉ 4 Éclairage BT & Harmoniques THD -->
-        <article class="bg-white rounded-2xl border border-slate-200/80 overflow-hidden card-project flex flex-col justify-between">
-          <div>
-            <div class="relative aspect-[16/10] bg-slate-100 overflow-hidden">
-              <img 
-                src="thd-reseau.jpg" 
-                alt="Mesure de qualité réseau et spectre THD" 
-                class="w-full h-full object-cover"
-                onerror="this.onerror=null; this.parentElement.innerHTML='<div class=\'w-full h-full flex flex-col items-center justify-center text-slate-400 p-4 text-xs font-mono text-center\'><i data-lucide=\'activity\' class=\'w-8 h-8 mb-1 text-slate-400\'></i>thd-reseau.jpg</div>'; lucide.createIcons();"
-              >
-              <div class="absolute top-3 left-3">
-                <span class="text-[10px] font-bold uppercase tracking-wider px-2.5 py-1 rounded bg-emerald-700 text-white">SAÉ 4.EME.02 · Installer</span>
-              </div>
-            </div>
-
-            <div class="p-5">
-              <h3 class="text-base font-bold text-slate-900 mb-1.5 leading-snug">Optimisation Éclairage BT & Qualité Réseau</h3>
-              <p class="text-xs text-slate-600 leading-relaxed mb-3">
-                Dimensionnement d'une installation basse tension réelle. Relevé SEE Electrical, mesure des lux selon la norme <strong>EN 12464</strong> et analyse harmonique du <strong>taux de distorsion harmonique (THD)</strong> (CEI 61000-3-2).
-              </p>
-              <div class="text-[11px] text-slate-500 space-y-1 bg-slate-50 p-2.5 rounded-lg border border-slate-100">
-                <p>• <strong>Durée</strong> : 20h en autonomie individuelle</p>
-                <p>• <strong>Livrable</strong> : PV de certification validé & rapport</p>
-              </div>
-            </div>
-          </div>
-
-          <div class="px-5 pb-5 pt-3 border-t border-slate-100 flex flex-wrap gap-1.5">
-            <span class="text-[10px] font-mono bg-slate-100 text-slate-700 px-2 py-0.5 rounded">SEE Electrical</span>
-            <span class="text-[10px] font-mono bg-slate-100 text-slate-700 px-2 py-0.5 rounded">EN 12464</span>
-            <span class="text-[10px] font-mono bg-slate-100 text-slate-700 px-2 py-0.5 rounded">Analyseur THD</span>
-          </div>
-        </article>
-
-        <!-- Projet 4 : Armoire Commande & Puissance Annealsys -->
-        <article class="bg-white rounded-2xl border border-slate-200/80 overflow-hidden card-project flex flex-col justify-between">
-          <div>
-            <div class="relative aspect-[16/10] bg-slate-100 overflow-hidden">
+            <div class="aspect-[16/10] bg-slate-100 overflow-hidden">
               <img 
                 src="armoire-commande.jpg" 
                 alt="Armoire de commande et puissance Annealsys" 
                 class="w-full h-full object-cover"
-                onerror="this.onerror=null; this.parentElement.innerHTML='<div class=\'w-full h-full flex flex-col items-center justify-center text-slate-400 p-4 text-xs font-mono text-center\'><i data-lucide=\'cpu\' class=\'w-8 h-8 mb-1 text-slate-400\'></i>armoire-commande.jpg</div>'; lucide.createIcons();"
               >
-              <div class="absolute top-3 left-3">
-                <span class="text-[10px] font-bold uppercase tracking-wider px-2.5 py-1 rounded bg-[#0B2545] text-white">Professionnel · Annealsys</span>
-              </div>
             </div>
 
             <div class="p-5">
-              <h3 class="text-base font-bold text-slate-900 mb-1.5 leading-snug">Armoire de Commande & Puissance 400V/24V</h3>
+              <span class="text-[11px] font-bold text-[#0077B5] uppercase tracking-wider block mb-1">Professionnel · Annealsys</span>
+              <h3 class="text-base font-bold text-slate-900 mb-1.5 leading-snug">Conception d'Armoire de Commande & Puissance</h3>
               <p class="text-xs text-slate-600 leading-relaxed">
-                Conception CAO intégrale sous SEE Electrical : intégration de l'automate Beckhoff, borniers automatiques, relais de sécurité machine, alimentations 24VDC et cartes de chauffe multizone.
+                Schémas électriques sous SEE Electrical : intégration de l'automate Beckhoff, borniers automatiques, relais de sécurité machine CE, alimentations 24VDC et cartes drivers de chauffe.
               </p>
             </div>
           </div>
@@ -287,63 +173,144 @@
           </div>
         </article>
 
-        <!-- Projet 5 : Chauffe Halogène & Rampes RTP -->
+        <!-- Projet 2 : Chauffe Halogène & Rampes RTP -->
         <article class="bg-white rounded-2xl border border-slate-200/80 overflow-hidden card-project flex flex-col justify-between">
           <div>
-            <div class="relative aspect-[16/10] bg-slate-100 overflow-hidden">
+            <div class="aspect-[16/10] bg-slate-100 overflow-hidden">
               <img 
                 src="chambre-lampes.jpg" 
                 alt="Chambre de chauffe par lampes halogènes" 
                 class="w-full h-full object-cover"
-                onerror="this.onerror=null; this.parentElement.innerHTML='<div class=\'w-full h-full flex flex-col items-center justify-center text-slate-400 p-4 text-xs font-mono text-center\'><i data-lucide=\'sun\' class=\'w-8 h-8 mb-1 text-slate-400\'></i>chambre-lampes.jpg</div>'; lucide.createIcons();"
               >
-              <div class="absolute top-3 left-3">
-                <span class="text-[10px] font-bold uppercase tracking-wider px-2.5 py-1 rounded bg-[#0B2545] text-white">Professionnel · Annealsys</span>
-              </div>
             </div>
 
             <div class="p-5">
+              <span class="text-[11px] font-bold text-[#0077B5] uppercase tracking-wider block mb-1">Professionnel · Annealsys</span>
               <h3 class="text-base font-bold text-slate-900 mb-1.5 leading-snug">Chambre de Traitement Thermique Rapide (RTP)</h3>
               <p class="text-xs text-slate-600 leading-relaxed">
-                Étude du raccordement des rampes de lampes infrarouges, thermocouples et pyromètres de contrôle thermique rapide jusqu'à 1450°C sous vide ou atmosphère contrôlée.
+                Conception du câblage de puissance 400V pour rampes de lampes infrarouges de réacteurs RTP. Gestion thermique multizone, pyromètres, thermocouples et contacteurs haute puissance.
               </p>
             </div>
           </div>
 
           <div class="px-5 pb-5 pt-3 border-t border-slate-100 flex flex-wrap gap-1.5">
+            <span class="text-[10px] font-mono bg-slate-100 text-slate-700 px-2 py-0.5 rounded">Puissance 400V</span>
             <span class="text-[10px] font-mono bg-slate-100 text-slate-700 px-2 py-0.5 rounded">RTP / RTA</span>
-            <span class="text-[10px] font-mono bg-slate-100 text-slate-700 px-2 py-0.5 rounded">400V Triphasé</span>
             <span class="text-[10px] font-mono bg-slate-100 text-slate-700 px-2 py-0.5 rounded">Régulation PID</span>
           </div>
         </article>
 
-        <!-- Projet 6 : Machine Intégrale MC-050 / AS-Master -->
+        <!-- Projet 3 : Pilotage Électrovannes & Fluides -->
         <article class="bg-white rounded-2xl border border-slate-200/80 overflow-hidden card-project flex flex-col justify-between">
           <div>
-            <div class="relative aspect-[16/10] bg-slate-100 overflow-hidden">
+            <div class="aspect-[16/10] bg-slate-100 overflow-hidden">
               <img 
-                src="machine-mc050.jpg" 
-                alt="Système Annealsys MC-050 DLI" 
-                class="w-full h-full object-cover object-top"
-                onerror="this.onerror=null; this.parentElement.innerHTML='<div class=\'w-full h-full flex flex-col items-center justify-center text-slate-400 p-4 text-xs font-mono text-center\'><i data-lucide=\'box\' class=\'w-8 h-8 mb-1 text-slate-400\'></i>machine-mc050.jpg</div>'; lucide.createIcons();"
+                src="electrovanne-pneumatique.jpg" 
+                alt="Gestion pneumatique et électrovannes" 
+                class="w-full h-full object-cover"
               >
-              <div class="absolute top-3 left-3">
-                <span class="text-[10px] font-bold uppercase tracking-wider px-2.5 py-1 rounded bg-[#0B2545] text-white">Équipement · Annealsys</span>
-              </div>
             </div>
 
             <div class="p-5">
-              <h3 class="text-base font-bold text-slate-900 mb-1.5 leading-snug">Standardisation Gamme MC-050 & AS-Master</h3>
+              <span class="text-[11px] font-bold text-[#0077B5] uppercase tracking-wider block mb-1">Professionnel · Annealsys</span>
+              <h3 class="text-base font-bold text-slate-900 mb-1.5 leading-snug">Distribution Pneumatique & Électrovannes</h3>
               <p class="text-xs text-slate-600 leading-relaxed">
-                Standardisation des dossiers électriques d'intégration globale : pupitres opérateur, boutons d'arrêt d'urgence, synoptiques et gestion des îlots d'électrovannes pneumatiques.
+                Schématisation et raccordement des îlots de distribution pneumatique, électrovannes de gaz process haute pureté et asservissement de l'ouverture/fermeture de la chambre sous vide.
               </p>
             </div>
           </div>
 
           <div class="px-5 pb-5 pt-3 border-t border-slate-100 flex flex-wrap gap-1.5">
-            <span class="text-[10px] font-mono bg-slate-100 text-slate-700 px-2 py-0.5 rounded">MC-050</span>
             <span class="text-[10px] font-mono bg-slate-100 text-slate-700 px-2 py-0.5 rounded">Pneumatique</span>
-            <span class="text-[10px] font-mono bg-slate-100 text-slate-700 px-2 py-0.5 rounded">Arrêt d'urgence</span>
+            <span class="text-[10px] font-mono bg-slate-100 text-slate-700 px-2 py-0.5 rounded">Électrovannes</span>
+            <span class="text-[10px] font-mono bg-slate-100 text-slate-700 px-2 py-0.5 rounded">Vide & Gaz</span>
+          </div>
+        </article>
+
+        <!-- Projet 4 : SAÉ 4 MPPT dsPIC33 -->
+        <article class="bg-white rounded-2xl border border-slate-200/80 overflow-hidden card-project flex flex-col justify-between">
+          <div>
+            <div class="aspect-[16/10] bg-slate-100 overflow-hidden">
+              <img 
+                src="CARTEMPPT.png" 
+                alt="Carte dsPIC33 pour asservissement MPPT" 
+                class="w-full h-full object-cover"
+              >
+            </div>
+
+            <div class="p-5">
+              <span class="text-[11px] font-bold text-[#0B2545] uppercase tracking-wider block mb-1">SAÉ 4.EME.01 · Conception</span>
+              <h3 class="text-base font-bold text-slate-900 mb-1.5 leading-snug">Polarisation Panneau Photovoltaïque (MPPT)</h3>
+              <p class="text-xs text-slate-600 leading-relaxed mb-3">
+                Implémentation de l'algorithme <em>Perturb & Observe</em> en langage C sur microcontrôleur <strong>dsPIC33FJ128MC802</strong> (MPLABX / XC16). Dimensionnement d'un hacheur DC/DC et validation sur simulateur dSPACE / Simulink.
+              </p>
+              <p class="text-[11px] text-slate-500 font-medium">40h de projet technique en binôme • IUT de Poitiers</p>
+            </div>
+          </div>
+
+          <div class="px-5 pb-5 pt-3 border-t border-slate-100 flex flex-wrap gap-1.5">
+            <span class="text-[10px] font-mono bg-slate-100 text-slate-700 px-2 py-0.5 rounded">dsPIC33</span>
+            <span class="text-[10px] font-mono bg-slate-100 text-slate-700 px-2 py-0.5 rounded">Langage C</span>
+            <span class="text-[10px] font-mono bg-slate-100 text-slate-700 px-2 py-0.5 rounded">Simulink</span>
+            <span class="text-[10px] font-mono bg-slate-100 text-slate-700 px-2 py-0.5 rounded">MPPT P&O</span>
+          </div>
+        </article>
+
+        <!-- Projet 5 : SAÉ 3 Variateur ATV320 HVAC -->
+        <article class="bg-white rounded-2xl border border-slate-200/80 overflow-hidden card-project flex flex-col justify-between">
+          <div>
+            <div class="aspect-[16/10] bg-slate-100 overflow-hidden">
+              <img 
+                src="COFFRETELECVARIATEUR.png" 
+                alt="Coffret variateur Schneider ATV320 HVAC" 
+                class="w-full h-full object-cover"
+              >
+            </div>
+
+            <div class="p-5">
+              <span class="text-[11px] font-bold text-[#0B2545] uppercase tracking-wider block mb-1">SAÉ 3.EME.01 · Maintenir</span>
+              <h3 class="text-base font-bold text-slate-900 mb-1.5 leading-snug">Coffret Variateur Schneider ATV320 (HVAC)</h3>
+              <p class="text-xs text-slate-600 leading-relaxed mb-3">
+                Installation d'un variateur HVAC sur extracteurs d'air (100% jour / 15% nuit). Schémas SEE Electrical, paramétrage SoMove, automate RS Logic et coupure d'urgence EN 13849. Câblage certifié NFC 15-100.
+              </p>
+              <p class="text-[11px] text-slate-500 font-medium">45h de projet technique en binôme • IUT de Poitiers</p>
+            </div>
+          </div>
+
+          <div class="px-5 pb-5 pt-3 border-t border-slate-100 flex flex-wrap gap-1.5">
+            <span class="text-[10px] font-mono bg-slate-100 text-slate-700 px-2 py-0.5 rounded">ATV320</span>
+            <span class="text-[10px] font-mono bg-slate-100 text-slate-700 px-2 py-0.5 rounded">SoMove</span>
+            <span class="text-[10px] font-mono bg-slate-100 text-slate-700 px-2 py-0.5 rounded">RS Logic</span>
+            <span class="text-[10px] font-mono bg-slate-100 text-slate-700 px-2 py-0.5 rounded">NFC 15-100</span>
+          </div>
+        </article>
+
+        <!-- Projet 6 : SAÉ 4 Éclairage BT & Harmoniques THD -->
+        <article class="bg-white rounded-2xl border border-slate-200/80 overflow-hidden card-project flex flex-col justify-between">
+          <div>
+            <div class="aspect-[16/10] bg-slate-100 overflow-hidden">
+              <img 
+                src="thd-reseau.png" 
+                alt="Mesure de qualité réseau et spectre THD" 
+                class="w-full h-full object-cover"
+                onerror="this.onerror=null; this.src='thd-reseau.jpg';"
+              >
+            </div>
+
+            <div class="p-5">
+              <span class="text-[11px] font-bold text-[#0B2545] uppercase tracking-wider block mb-1">SAÉ 4.EME.02 · Installer</span>
+              <h3 class="text-base font-bold text-slate-900 mb-1.5 leading-snug">Optimisation Éclairage BT & Qualité Réseau</h3>
+              <p class="text-xs text-slate-600 leading-relaxed mb-3">
+                Dimensionnement d'une installation basse tension. Relevé sous SEE Electrical, mesure des lux selon la norme EN 12464 et analyse harmonique du taux de distorsion harmonique (THD) (CEI 61000-3-2).
+              </p>
+              <p class="text-[11px] text-slate-500 font-medium">20h de projet individuel • PV de certification validé</p>
+            </div>
+          </div>
+
+          <div class="px-5 pb-5 pt-3 border-t border-slate-100 flex flex-wrap gap-1.5">
+            <span class="text-[10px] font-mono bg-slate-100 text-slate-700 px-2 py-0.5 rounded">SEE Electrical</span>
+            <span class="text-[10px] font-mono bg-slate-100 text-slate-700 px-2 py-0.5 rounded">EN 12464</span>
+            <span class="text-[10px] font-mono bg-slate-100 text-slate-700 px-2 py-0.5 rounded">Analyseur THD</span>
           </div>
         </article>
 
