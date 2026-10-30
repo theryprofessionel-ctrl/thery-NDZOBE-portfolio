@@ -22,11 +22,11 @@
       font-family: 'JetBrains Mono', monospace;
     }
     .card-project {
-      transition: transform 0.2s ease, box-shadow 0.2s ease, border-color 0.2s ease;
+      transition: transform 0.25s ease, box-shadow 0.25s ease, border-color 0.25s ease;
     }
     .card-project:hover {
-      transform: translateY(-3px);
-      box-shadow: 0 12px 28px -6px rgba(15, 23, 42, 0.08);
+      transform: translateY(-4px);
+      box-shadow: 0 16px 32px -8px rgba(15, 23, 42, 0.08);
       border-color: #CBD5E1;
     }
   </style>
@@ -69,7 +69,7 @@
         </h1>
 
         <p class="text-base sm:text-lg text-slate-600 leading-relaxed font-normal">
-          Diplômé d'un <strong>BUT GEII</strong> (Génie Électrique et Informatique Industrielle) et fort de <strong>2 ans d'expérience en alternance</strong> comme <strong>Dessinateur-Projeteur en Électricité</strong> chez <strong>ANNEALSYS</strong> (Groupe ECM). 
+          Diplômé d'un <strong>BUT GEII</strong> et fort de <strong>2 ans d'expérience en alternance</strong> comme <strong>Dessinateur-Projeteur en Électricité</strong> chez <strong>ANNEALSYS</strong> (Groupe ECM). 
           Je conçois l'architecture électrique d'équipements de semi-conducteurs de pointe et recherche une <strong>alternance de 3 ans</strong> pour mon cycle d'<strong>ingénieur en Génie Électrique, Automatique & Robotique</strong>.
         </p>
 
@@ -100,12 +100,12 @@
         </div>
       </div>
 
-      <!-- Photo profil technique nette et sans aucun texte par dessus -->
+      <!-- Photo profil technique nette et dégagée -->
       <div class="lg:col-span-5 flex justify-center">
         <div class="relative w-full max-w-xs sm:max-w-sm aspect-[4/5] rounded-3xl overflow-hidden border border-slate-200 shadow-xl bg-slate-100">
           <img 
             src="photoportfolio.png" 
-            alt="Thery NDZOBE - Câblage armoire électrique" 
+            alt="Thery NDZOBE" 
             class="w-full h-full object-cover object-center"
             onerror="this.onerror=null; this.src='photoportfolio.jpg';"
           >
@@ -134,39 +134,41 @@
       </div>
     </section>
 
-    <!-- PROJETS EN AVANT (IMAGES TOTALEMENT DÉGAGÉES SANS BANDEAU PAR DESSUS) -->
+    <!-- PROJETS EN AVANT (IMAGES PROPRES, PLUS GRANDES, AUCUN TEXTE QUI CACHE) -->
     <section id="projets" class="space-y-8 mb-24">
       <div class="flex items-end justify-between border-b border-slate-200/80 pb-4">
         <div>
           <h2 class="text-2xl font-bold text-[#0B2545]">Projets en avant</h2>
-          <p class="text-sm text-slate-500 mt-1">Réalisations industrielles chez Annealsys et SAÉ universitaires réelles.</p>
+          <p class="text-sm text-slate-500 mt-1">Réalisations industrielles chez Annealsys et SAÉ universitaires.</p>
         </div>
         <span class="text-xs font-mono text-slate-400">6 réalisations</span>
       </div>
 
-      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-7">
 
         <!-- Projet 1 : Armoire Commande & Puissance Annealsys -->
         <article class="bg-white rounded-2xl border border-slate-200/80 overflow-hidden card-project flex flex-col justify-between">
           <div>
-            <div class="aspect-[16/10] bg-slate-100 overflow-hidden">
+            <div class="aspect-[4/3] bg-slate-100 overflow-hidden">
               <img 
                 src="armoire-commande.jpg" 
                 alt="Armoire de commande et puissance Annealsys" 
-                class="w-full h-full object-cover"
+                class="w-full h-full object-cover transition-transform duration-300 hover:scale-105"
               >
             </div>
 
-            <div class="p-5">
-              <span class="text-[11px] font-bold text-[#0077B5] uppercase tracking-wider block mb-1">Professionnel · Annealsys</span>
-              <h3 class="text-base font-bold text-slate-900 mb-1.5 leading-snug">Conception d'Armoire de Commande & Puissance</h3>
-              <p class="text-xs text-slate-600 leading-relaxed">
+            <div class="p-6">
+              <h3 class="text-base font-bold text-slate-900 mb-2 leading-snug">Conception d'Armoire de Commande & Puissance</h3>
+              <p class="text-xs text-slate-600 leading-relaxed mb-4">
                 Schémas électriques sous SEE Electrical : intégration de l'automate Beckhoff, borniers automatiques, relais de sécurité machine CE, alimentations 24VDC et cartes drivers de chauffe.
               </p>
+              <div class="flex items-center text-xs font-bold text-[#0077B5] hover:text-[#0B2545] transition-colors">
+                <span>VOIR LE PROJET →</span>
+              </div>
             </div>
           </div>
 
-          <div class="px-5 pb-5 pt-3 border-t border-slate-100 flex flex-wrap gap-1.5">
+          <div class="px-6 pb-5 pt-3 border-t border-slate-100 flex flex-wrap gap-1.5">
             <span class="text-[10px] font-mono bg-slate-100 text-slate-700 px-2 py-0.5 rounded">SEE Electrical</span>
             <span class="text-[10px] font-mono bg-slate-100 text-slate-700 px-2 py-0.5 rounded">Beckhoff</span>
             <span class="text-[10px] font-mono bg-slate-100 text-slate-700 px-2 py-0.5 rounded">Sécurité CE</span>
@@ -176,24 +178,26 @@
         <!-- Projet 2 : Chauffe Halogène & Rampes RTP -->
         <article class="bg-white rounded-2xl border border-slate-200/80 overflow-hidden card-project flex flex-col justify-between">
           <div>
-            <div class="aspect-[16/10] bg-slate-100 overflow-hidden">
+            <div class="aspect-[4/3] bg-slate-100 overflow-hidden">
               <img 
                 src="chambre-lampes.jpg" 
                 alt="Chambre de chauffe par lampes halogènes" 
-                class="w-full h-full object-cover"
+                class="w-full h-full object-cover transition-transform duration-300 hover:scale-105"
               >
             </div>
 
-            <div class="p-5">
-              <span class="text-[11px] font-bold text-[#0077B5] uppercase tracking-wider block mb-1">Professionnel · Annealsys</span>
-              <h3 class="text-base font-bold text-slate-900 mb-1.5 leading-snug">Chambre de Traitement Thermique Rapide (RTP)</h3>
-              <p class="text-xs text-slate-600 leading-relaxed">
+            <div class="p-6">
+              <h3 class="text-base font-bold text-slate-900 mb-2 leading-snug">Chambre de Traitement Thermique Rapide (RTP)</h3>
+              <p class="text-xs text-slate-600 leading-relaxed mb-4">
                 Conception du câblage de puissance 400V pour rampes de lampes infrarouges de réacteurs RTP. Gestion thermique multizone, pyromètres, thermocouples et contacteurs haute puissance.
               </p>
+              <div class="flex items-center text-xs font-bold text-[#0077B5] hover:text-[#0B2545] transition-colors">
+                <span>VOIR LE PROJET →</span>
+              </div>
             </div>
           </div>
 
-          <div class="px-5 pb-5 pt-3 border-t border-slate-100 flex flex-wrap gap-1.5">
+          <div class="px-6 pb-5 pt-3 border-t border-slate-100 flex flex-wrap gap-1.5">
             <span class="text-[10px] font-mono bg-slate-100 text-slate-700 px-2 py-0.5 rounded">Puissance 400V</span>
             <span class="text-[10px] font-mono bg-slate-100 text-slate-700 px-2 py-0.5 rounded">RTP / RTA</span>
             <span class="text-[10px] font-mono bg-slate-100 text-slate-700 px-2 py-0.5 rounded">Régulation PID</span>
@@ -203,52 +207,55 @@
         <!-- Projet 3 : Pilotage Électrovannes & Fluides -->
         <article class="bg-white rounded-2xl border border-slate-200/80 overflow-hidden card-project flex flex-col justify-between">
           <div>
-            <div class="aspect-[16/10] bg-slate-100 overflow-hidden">
+            <div class="aspect-[4/3] bg-slate-100 overflow-hidden">
               <img 
                 src="electrovanne-pneumatique.jpg" 
                 alt="Gestion pneumatique et électrovannes" 
-                class="w-full h-full object-cover"
+                class="w-full h-full object-cover transition-transform duration-300 hover:scale-105"
               >
             </div>
 
-            <div class="p-5">
-              <span class="text-[11px] font-bold text-[#0077B5] uppercase tracking-wider block mb-1">Professionnel · Annealsys</span>
-              <h3 class="text-base font-bold text-slate-900 mb-1.5 leading-snug">Distribution Pneumatique & Électrovannes</h3>
-              <p class="text-xs text-slate-600 leading-relaxed">
+            <div class="p-6">
+              <h3 class="text-base font-bold text-slate-900 mb-2 leading-snug">Distribution Pneumatique & Électrovannes</h3>
+              <p class="text-xs text-slate-600 leading-relaxed mb-4">
                 Schématisation et raccordement des îlots de distribution pneumatique, électrovannes de gaz process haute pureté et asservissement de l'ouverture/fermeture de la chambre sous vide.
               </p>
+              <div class="flex items-center text-xs font-bold text-[#0077B5] hover:text-[#0B2545] transition-colors">
+                <span>VOIR LE PROJET →</span>
+              </div>
             </div>
           </div>
 
-          <div class="px-5 pb-5 pt-3 border-t border-slate-100 flex flex-wrap gap-1.5">
+          <div class="px-6 pb-5 pt-3 border-t border-slate-100 flex flex-wrap gap-1.5">
             <span class="text-[10px] font-mono bg-slate-100 text-slate-700 px-2 py-0.5 rounded">Pneumatique</span>
             <span class="text-[10px] font-mono bg-slate-100 text-slate-700 px-2 py-0.5 rounded">Électrovannes</span>
             <span class="text-[10px] font-mono bg-slate-100 text-slate-700 px-2 py-0.5 rounded">Vide & Gaz</span>
           </div>
         </article>
 
-        <!-- Projet 4 : SAÉ 4 MPPT dsPIC33 -->
+        <!-- Projet 4 : MPPT dsPIC33 -->
         <article class="bg-white rounded-2xl border border-slate-200/80 overflow-hidden card-project flex flex-col justify-between">
           <div>
-            <div class="aspect-[16/10] bg-slate-100 overflow-hidden">
+            <div class="aspect-[4/3] bg-slate-100 overflow-hidden">
               <img 
                 src="CARTEMPPT.png" 
                 alt="Carte dsPIC33 pour asservissement MPPT" 
-                class="w-full h-full object-cover"
+                class="w-full h-full object-cover transition-transform duration-300 hover:scale-105"
               >
             </div>
 
-            <div class="p-5">
-              <span class="text-[11px] font-bold text-[#0B2545] uppercase tracking-wider block mb-1">SAÉ 4.EME.01 · Conception</span>
-              <h3 class="text-base font-bold text-slate-900 mb-1.5 leading-snug">Polarisation Panneau Photovoltaïque (MPPT)</h3>
-              <p class="text-xs text-slate-600 leading-relaxed mb-3">
+            <div class="p-6">
+              <h3 class="text-base font-bold text-slate-900 mb-2 leading-snug">Polarisation Panneau Photovoltaïque (MPPT)</h3>
+              <p class="text-xs text-slate-600 leading-relaxed mb-4">
                 Implémentation de l'algorithme <em>Perturb & Observe</em> en langage C sur microcontrôleur <strong>dsPIC33FJ128MC802</strong> (MPLABX / XC16). Dimensionnement d'un hacheur DC/DC et validation sur simulateur dSPACE / Simulink.
               </p>
-              <p class="text-[11px] text-slate-500 font-medium">40h de projet technique en binôme • IUT de Poitiers</p>
+              <div class="flex items-center text-xs font-bold text-[#0077B5] hover:text-[#0B2545] transition-colors">
+                <span>VOIR LE PROJET →</span>
+              </div>
             </div>
           </div>
 
-          <div class="px-5 pb-5 pt-3 border-t border-slate-100 flex flex-wrap gap-1.5">
+          <div class="px-6 pb-5 pt-3 border-t border-slate-100 flex flex-wrap gap-1.5">
             <span class="text-[10px] font-mono bg-slate-100 text-slate-700 px-2 py-0.5 rounded">dsPIC33</span>
             <span class="text-[10px] font-mono bg-slate-100 text-slate-700 px-2 py-0.5 rounded">Langage C</span>
             <span class="text-[10px] font-mono bg-slate-100 text-slate-700 px-2 py-0.5 rounded">Simulink</span>
@@ -256,24 +263,25 @@
           </div>
         </article>
 
-        <!-- Projet 5 : SAÉ 3 Variateur ATV320 HVAC -->
+        <!-- Projet 5 : Variateur ATV320 HVAC -->
         <article class="bg-white rounded-2xl border border-slate-200/80 overflow-hidden card-project flex flex-col justify-between">
           <div>
-            <div class="aspect-[16/10] bg-slate-100 overflow-hidden">
+            <div class="aspect-[4/3] bg-slate-100 overflow-hidden">
               <img 
                 src="COFFRETELECVARIATEUR.png" 
                 alt="Coffret variateur Schneider ATV320 HVAC" 
-                class="w-full h-full object-cover"
+                class="w-full h-full object-cover transition-transform duration-300 hover:scale-105"
               >
             </div>
 
-            <div class="p-5">
-              <span class="text-[11px] font-bold text-[#0B2545] uppercase tracking-wider block mb-1">SAÉ 3.EME.01 · Maintenir</span>
-              <h3 class="text-base font-bold text-slate-900 mb-1.5 leading-snug">Coffret Variateur Schneider ATV320 (HVAC)</h3>
-              <p class="text-xs text-slate-600 leading-relaxed mb-3">
+            <div class="p-6">
+              <h3 class="text-base font-bold text-slate-900 mb-2 leading-snug">Coffret Variateur Schneider ATV320 (HVAC)</h3>
+              <p class="text-xs text-slate-600 leading-relaxed mb-4">
                 Installation d'un variateur HVAC sur extracteurs d'air (100% jour / 15% nuit). Schémas SEE Electrical, paramétrage SoMove, automate RS Logic et coupure d'urgence EN 13849. Câblage certifié NFC 15-100.
               </p>
-              <p class="text-[11px] text-slate-500 font-medium">45h de projet technique en binôme • IUT de Poitiers</p>
+              <div class="flex items-center text-xs font-bold text-[#0077B5] hover:text-[#0B2545] transition-colors">
+                <span>VOIR LE PROJET →</span>
+              </div>
             </div>
           </div>
 
@@ -285,25 +293,26 @@
           </div>
         </article>
 
-        <!-- Projet 6 : SAÉ 4 Éclairage BT & Harmoniques THD -->
+        <!-- Projet 6 : Éclairage BT & Harmoniques THD -->
         <article class="bg-white rounded-2xl border border-slate-200/80 overflow-hidden card-project flex flex-col justify-between">
           <div>
-            <div class="aspect-[16/10] bg-slate-100 overflow-hidden">
+            <div class="aspect-[4/3] bg-slate-100 overflow-hidden">
               <img 
                 src="thd-reseau.png" 
                 alt="Mesure de qualité réseau et spectre THD" 
-                class="w-full h-full object-cover"
+                class="w-full h-full object-cover transition-transform duration-300 hover:scale-105"
                 onerror="this.onerror=null; this.src='thd-reseau.jpg';"
               >
             </div>
 
-            <div class="p-5">
-              <span class="text-[11px] font-bold text-[#0B2545] uppercase tracking-wider block mb-1">SAÉ 4.EME.02 · Installer</span>
-              <h3 class="text-base font-bold text-slate-900 mb-1.5 leading-snug">Optimisation Éclairage BT & Qualité Réseau</h3>
-              <p class="text-xs text-slate-600 leading-relaxed mb-3">
+            <div class="p-6">
+              <h3 class="text-base font-bold text-slate-900 mb-2 leading-snug">Optimisation Éclairage BT & Qualité Réseau</h3>
+              <p class="text-xs text-slate-600 leading-relaxed mb-4">
                 Dimensionnement d'une installation basse tension. Relevé sous SEE Electrical, mesure des lux selon la norme EN 12464 et analyse harmonique du taux de distorsion harmonique (THD) (CEI 61000-3-2).
               </p>
-              <p class="text-[11px] text-slate-500 font-medium">20h de projet individuel • PV de certification validé</p>
+              <div class="flex items-center text-xs font-bold text-[#0077B5] hover:text-[#0B2545] transition-colors">
+                <span>VOIR LE PROJET →</span>
+              </div>
             </div>
           </div>
 
@@ -317,7 +326,7 @@
       </div>
     </section>
 
-    <!-- EXPÉRIENCE ANNEALSYS (DÉTAILLÉE SUR TOUTE LA GAMME) -->
+    <!-- EXPÉRIENCE ANNEALSYS -->
     <section id="experience" class="space-y-6 mb-24">
       <div class="flex flex-col sm:flex-row sm:items-end justify-between gap-4">
         <div>
