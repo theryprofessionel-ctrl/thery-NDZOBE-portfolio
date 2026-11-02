@@ -1,543 +1,550 @@
 <!DOCTYPE html>
-<html lang="fr" class="scroll-smooth">
+<html lang="fr">
 <head>
   <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Thery NDZOBE — Alternant Dessinateur-Projeteur & Candidat Ingénieur</title>
-  
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#0a1628">
+  <meta name="description" content="Portfolio de Thery NDZOBE, étudiant en BUT GEII et alternant en bureau d'études électriques chez ANNEALSYS. Projets de CAO électrique, automatisme et électronique. Alternance ingénieur recherchée pour 2027.">
+  <meta property="og:type" content="website">
+  <meta property="og:locale" content="fr_FR">
+  <meta property="og:title" content="Thery NDZOBE — Portfolio | Génie électrique & Industrie">
+  <meta property="og:description" content="De la conception électrique à la réalisation industrielle. Découvrez mon parcours, mes missions en bureau d'études et mes projets.">
+  <meta property="og:url" content="https://theryprofessionel-ctrl.github.io/thery-NDZOBE-portfolio/">
+  <meta name="color-scheme" content="light">
+  <link rel="canonical" href="https://theryprofessionel-ctrl.github.io/thery-NDZOBE-portfolio/">
+  <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='15' fill='%230a1628'/%3E%3Ctext x='9' y='43' font-family='Arial,sans-serif' font-size='29' font-weight='800' fill='white'%3ETN%3C/text%3E%3Ccircle cx='50' cy='13' r='5' fill='%2359d3f5'/%3E%3C/svg%3E">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
-  
-  <script src="https://cdn.tailwindcss.com"></script>
-  <script src="https://unpkg.com/lucide@latest"></script>
-
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Manrope:wght@400;500;600;700;800&family=IBM+Plex+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+  <title>Thery NDZOBE — Génie électrique, CAO & Industrie</title>
   <style>
-    body {
-      font-family: 'Plus Jakarta Sans', sans-serif;
-      background-color: #F8FAFC;
-      color: #0F172A;
+    :root{
+      --navy:#0a1628;--navy-soft:#11233a;--ink:#162439;--muted:#64748a;
+      --sky:#208bd1;--cyan:#66d8f2;--ice:#e8f8fc;--paper:#f6f8fb;
+      --line:#e1e8f0;--white:#fff;--radius:22px;
+      --shadow:0 24px 64px rgba(15,39,64,.09);
     }
-    .font-mono {
-      font-family: 'JetBrains Mono', monospace;
+    *,*::before,*::after{box-sizing:border-box}
+    html{scroll-behavior:smooth;scroll-padding-top:106px}
+    body{margin:0;background:var(--paper);color:var(--ink);font-family:'DM Sans',sans-serif;-webkit-font-smoothing:antialiased}
+    body.modal-open{overflow:hidden}
+    a{color:inherit;text-decoration:none}
+    button{font:inherit;cursor:pointer}
+    img,svg{max-width:100%}
+    img{display:block}
+    ::selection{background:#a2e7fb;color:var(--navy)}
+    :focus-visible{outline:3px solid #57c7ef;outline-offset:4px}
+    .container{width:min(1180px,calc(100% - 80px));margin-inline:auto}
+    .sr-only{position:absolute!important;width:1px!important;height:1px!important;padding:0!important;margin:-1px!important;overflow:hidden!important;clip:rect(0,0,0,0)!important;white-space:nowrap!important;border:0!important}
+    .skip-link{position:absolute;left:16px;top:-100px;z-index:200;background:#fff;padding:12px 18px;border-radius:10px;color:#071b33}
+    .skip-link:focus{top:16px}
+    .eyebrow{display:inline-flex;align-items:center;gap:11px;text-transform:uppercase;font-family:'IBM Plex Mono',monospace;letter-spacing:.16em;font-size:11px;font-weight:600}
+    .eyebrow .eyebrow-line{display:inline-block;width:25px;height:2px;background:currentColor}
+    .section-heading{font-family:Manrope,sans-serif;letter-spacing:-.05em;font-size:clamp(2rem,4vw,3.45rem);font-weight:800;line-height:1.12;margin:15px 0 17px}
+    .section-lead{color:var(--muted);font-size:16px;line-height:1.75;max-width:570px;margin:0}
+    .btn{display:inline-flex;align-items:center;justify-content:center;gap:11px;border-radius:12px;padding:15px 21px;font-weight:700;font-size:14px;white-space:nowrap;transition:transform .2s,background .2s,border-color .2s,box-shadow .2s;border:1px solid transparent}
+    .btn:hover{transform:translateY(-2px)}
+    .btn svg{width:17px;height:17px;flex:none}
+    .btn-primary{background:#53cdef;color:#061a2b;box-shadow:0 13px 30px rgba(62,203,242,.16)}
+    .btn-primary:hover{background:#8ce5ff;box-shadow:0 15px 32px rgba(62,203,242,.25)}
+    .btn-outline{color:#fff;border-color:rgba(231,246,255,.29);background:rgba(255,255,255,.06)}
+    .btn-outline:hover{background:rgba(255,255,255,.13);border-color:rgba(231,246,255,.5)}
+    .btn-light{background:#fff;border-color:var(--line);color:var(--ink);box-shadow:0 4px 14px rgba(18,40,70,.035)}
+    .btn-light:hover{border-color:#badbea}
+    /* Header */
+    .site-header{position:fixed;z-index:70;left:0;top:0;width:100%;padding:18px 0;transition:padding .2s,background .2s,box-shadow .2s}
+    .site-header.is-scrolled,.site-header.menu-open{padding:11px 0;background:rgba(9,24,42,.94);box-shadow:0 13px 50px rgba(6,12,25,.13);backdrop-filter:blur(18px)}
+    .nav-shell{display:flex;justify-content:space-between;align-items:center;gap:24px;min-height:48px}
+    .brand{display:inline-flex;align-items:center;gap:12px;color:#fff;flex-shrink:0}
+    .brand-mark{width:39px;height:39px;border:1px solid rgba(170,229,250,.55);border-radius:11px;display:grid;place-items:center;font:800 14px Manrope,sans-serif;letter-spacing:-.04em;position:relative}
+    .brand-mark::after{content:"";position:absolute;width:6px;height:6px;background:var(--cyan);border-radius:50%;right:-3px;top:-3px}
+    .brand-text{font:700 15px Manrope,sans-serif;letter-spacing:-.035em}
+    .brand-text small{display:block;font:500 9px 'IBM Plex Mono',monospace;text-transform:uppercase;letter-spacing:.17em;color:#93aac1;margin-top:3px}
+    .nav-links{display:flex;align-items:center;gap:28px}
+    .nav-links a{font-size:13px;font-weight:600;color:#d8e2f0;transition:color .2s}
+    .nav-links a:hover,.nav-links a:focus-visible{color:#67d5f3}
+    .nav-right{display:flex;align-items:center;gap:12px}
+    .nav-contact{border:1px solid rgba(255,255,255,.3);color:white;padding:11px 15px;border-radius:10px;font-size:12px;font-weight:700;white-space:nowrap;transition:background .2s}
+    .nav-contact:hover{background:rgba(255,255,255,.12)}
+    .menu-toggle{display:none;align-items:center;justify-content:center;width:44px;height:44px;background:rgba(255,255,255,.07);border:1px solid rgba(255,255,255,.23);border-radius:10px;color:#fff}
+    .menu-toggle svg{width:21px;height:21px}
+    .menu-toggle .icon-x{display:none}
+    .menu-open .menu-toggle .icon-menu{display:none}
+    .menu-open .menu-toggle .icon-x{display:block}
+    /* Hero */
+    .hero{background:var(--navy);position:relative;overflow:hidden;isolation:isolate;color:#fff;min-height:745px;padding:172px 0 110px}
+    .hero::before{content:"";position:absolute;inset:0;z-index:-2;background-image:linear-gradient(rgba(85,155,205,.055) 1px,transparent 1px),linear-gradient(90deg,rgba(85,155,205,.055) 1px,transparent 1px);background-size:66px 66px;mask-image:linear-gradient(to right,transparent 0%,black 45%,black 100%)}
+    .hero::after{content:"";position:absolute;right:-280px;top:-280px;width:860px;height:860px;border-radius:50%;background:radial-gradient(circle,rgba(36,131,179,.33),rgba(24,80,136,.11) 38%,transparent 69%);z-index:-1;pointer-events:none}
+    .hero-grid{display:grid;grid-template-columns:minmax(0,1.1fr) minmax(0,.9fr);align-items:center;gap:72px}
+    .hero-status{display:inline-flex;gap:10px;align-items:center;color:#b8e2f4;background:rgba(90,197,235,.1);border:1px solid rgba(126,216,244,.2);padding:10px 14px;border-radius:100px;font-size:11px;font-weight:700;letter-spacing:.045em}
+    .status-dot{display:inline-block;flex:none;width:8px;height:8px;border-radius:50%;background:#68dfc4;box-shadow:0 0 0 4px rgba(104,223,196,.13)}
+    .hero h1{font:800 clamp(3.25rem,6.8vw,6.4rem)/1.065 Manrope,sans-serif;letter-spacing:-.074em;margin:26px 0 20px;max-width:720px}
+    .hero h1 .name{color:#6ad6f3;white-space:nowrap}
+    .hero-title-note{font:600 clamp(1.1rem,2vw,1.5rem)/1.5 Manrope,sans-serif;letter-spacing:-.026em;margin:0 0 17px;color:#e4eff8;max-width:570px}
+    .hero-desc{font-size:15px;line-height:1.85;color:#9fb2c8;max-width:590px;margin:0}
+    .hero-actions{display:flex;flex-wrap:wrap;gap:12px;margin-top:31px}
+    .hero-contact{display:flex;flex-wrap:wrap;align-items:center;gap:22px;margin-top:34px}
+    .hero-contact a,.hero-contact span{font-size:12px;color:#bfccda;display:inline-flex;align-items:center;gap:8px}
+    .hero-contact a:hover{color:#78def6}
+    .hero-contact svg{width:15px;height:15px;color:#6ed6f3}
+    .hero-art{position:relative;width:100%;max-width:445px;margin-left:auto}
+    .portrait-outline{border:1px solid rgba(94,188,231,.28);border-radius:28px;padding:12px;transform:rotate(2.2deg)}
+    .portrait{height:470px;border-radius:20px;overflow:hidden;position:relative;background:radial-gradient(ellipse at 50% 24%,#245372 0%,#143851 44%,#102139 86%);transform:rotate(-2.2deg)}
+    .portrait::before{content:"";position:absolute;inset:0;background-image:linear-gradient(rgba(255,255,255,.055) 1px,transparent 1px),linear-gradient(90deg,rgba(255,255,255,.055) 1px,transparent 1px);background-size:32px 32px;mask-image:linear-gradient(to bottom,transparent,black);z-index:1}
+    .portrait::after{content:"";position:absolute;left:-42px;right:-42px;bottom:-235px;height:410px;border-radius:50%;border:1px solid rgba(130,225,249,.22);box-shadow:0 0 0 40px rgba(147,221,246,.06),0 0 0 95px rgba(147,221,246,.04)}
+    .portrait-initials{position:absolute;inset:0;display:flex;align-items:center;justify-content:center;font:800 145px Manrope,sans-serif;letter-spacing:-.1em;color:rgba(155,223,245,.26)}
+    .portrait img{position:absolute;inset:0;z-index:2;width:100%;height:100%;object-fit:cover;object-position:center 19%;filter:saturate(.86) contrast(1.03)}
+    .portrait-caption{position:absolute;left:23px;right:23px;bottom:22px;z-index:3;display:flex;align-items:center;justify-content:space-between;gap:12px;background:rgba(6,22,39,.7);backdrop-filter:blur(12px);border:1px solid rgba(244,252,255,.16);border-radius:14px;padding:16px}
+    .portrait-caption strong{font:700 14px Manrope,sans-serif}
+    .portrait-caption span{display:block;color:#aac6da;font:500 10px 'IBM Plex Mono',monospace;margin-top:5px}
+    .portrait-caption svg{width:27px;height:27px;color:#6ad7f4}
+    .floating-note{position:absolute;z-index:4;left:-64px;top:55px;background:#f2fbff;color:#0d2942;border-radius:14px;box-shadow:0 23px 45px rgba(2,11,23,.25);padding:17px 19px;display:flex;align-items:center;gap:13px;transform:rotate(-3deg)}
+    .floating-note .bolt{width:38px;height:38px;display:grid;place-items:center;background:#d9f2f9;border-radius:11px;color:#0b91c1}
+    .floating-note .bolt svg{width:20px;height:20px}
+    .floating-note strong{font:800 12px Manrope,sans-serif}
+    .floating-note span{display:block;font:500 10px 'IBM Plex Mono',monospace;color:#607b90;margin-top:5px}
+    .hero-bottom{position:absolute;left:0;bottom:0;width:100%;border-top:1px solid rgba(163,205,227,.13);background:rgba(10,21,38,.55)}
+    .hero-bottom-inner{display:flex;justify-content:space-between;align-items:center;gap:20px;padding:18px 0;color:#88a7bf;font:500 10px 'IBM Plex Mono',monospace;text-transform:uppercase;letter-spacing:.18em}
+    .hero-bottom-inner span:last-child{display:inline-flex;align-items:center;gap:8px}
+    .hero-bottom-inner svg{width:14px;height:14px}
+    /* KPI */
+    .stats-band{position:relative;z-index:1;margin-top:-1px;background:#fff;border-bottom:1px solid var(--line)}
+    .stats{display:grid;grid-template-columns:repeat(3,1fr)}
+    .stat{display:flex;align-items:center;gap:18px;padding:30px 28px;border-right:1px solid var(--line)}
+    .stat:first-child{padding-left:0}
+    .stat:last-child{border:0}
+    .stat-value{font:800 28px Manrope,sans-serif;letter-spacing:-.055em;color:#102944;white-space:nowrap}
+    .stat-desc{font-size:12px;line-height:1.55;color:#65778a;max-width:145px}
+    /* Sections */
+    .section{padding:112px 0}
+    .section-intro{display:flex;align-items:end;justify-content:space-between;gap:40px;margin-bottom:40px}
+    .section-intro .eyebrow{color:#268ac5}
+    .section-intro p{max-width:425px}
+    .expertise-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:18px}
+    .expertise-card{background:#fff;border:1px solid var(--line);padding:31px 28px 29px;border-radius:var(--radius);position:relative;overflow:hidden;transition:transform .22s,box-shadow .22s,border-color .22s}
+    .expertise-card:hover{transform:translateY(-5px);box-shadow:var(--shadow);border-color:#c4deea}
+    .expertise-card::after{content:"";position:absolute;width:144px;height:144px;right:-70px;top:-70px;border:1px solid #dfeff4;border-radius:50%;box-shadow:0 0 0 27px rgba(230,248,252,.38)}
+    .expertise-icon{display:grid;place-items:center;width:55px;height:55px;background:#eaf7fc;color:#1c80b8;border-radius:16px;margin-bottom:30px}
+    .expertise-icon svg{width:26px;height:26px}
+    .expertise-number{font:600 11px 'IBM Plex Mono',monospace;color:#91a3b2;display:block;margin-bottom:12px}
+    .expertise-card h3{font:800 20px Manrope,sans-serif;letter-spacing:-.035em;margin:0 0 13px}
+    .expertise-card p{margin:0;color:#68788b;line-height:1.8;font-size:13px}
+    .expertise-tags{display:flex;flex-wrap:wrap;gap:7px;margin-top:23px}
+    .tag{font:600 10px 'IBM Plex Mono',monospace;letter-spacing:.012em;border:1px solid #dce8f0;border-radius:7px;padding:7px 9px;color:#4b6176;background:#f8fbfd}
+    /* Experience */
+    .experience-section{background:#eaf0f6;border-block:1px solid #dfe8f0}
+    .experience-layout{display:grid;grid-template-columns: .8fr 1.2fr;align-items:start;gap:70px}
+    .experience-left{position:sticky;top:120px}
+    .experience-left .eyebrow{color:#207bb1}
+    .experience-left p{color:#5f758b;line-height:1.82;font-size:15px}
+    .company-signature{display:flex;align-items:center;gap:11px;border-top:1px solid #d4e1ec;margin-top:30px;padding-top:24px}
+    .company-signature .symbol{font:800 22px Manrope,sans-serif;letter-spacing:-.05em;color:#153451}
+    .company-signature small{display:block;color:#6c8193;font:500 11px 'IBM Plex Mono',monospace;margin-top:4px}
+    .exp-panel{background:#fff;border:1px solid #d9e4ed;border-radius:24px;box-shadow:var(--shadow);padding:37px}
+    .exp-header{display:flex;justify-content:space-between;gap:18px;align-items:start;padding-bottom:29px;border-bottom:1px solid #e4eaf0}
+    .exp-header h3{font:800 21px/1.4 Manrope,sans-serif;letter-spacing:-.04em;margin:10px 0 6px}
+    .exp-header p{margin:0;color:#667b8f;font-size:13px}
+    .exp-header .eyebrow{color:#237db3}
+    .exp-date{font:600 11px 'IBM Plex Mono',monospace;white-space:nowrap;padding:9px 12px;border-radius:9px;background:#ecf7fc;color:#196b99}
+    .exp-steps{margin:0;padding:7px 0 4px;list-style:none}
+    .exp-steps li{display:grid;grid-template-columns:38px 1fr;gap:15px;padding:21px 0;position:relative}
+    .exp-steps li:not(:last-child)::before{content:"";position:absolute;left:16px;top:53px;bottom:-8px;width:1px;background:#cddfec}
+    .step-num{display:grid;place-items:center;width:33px;height:33px;border-radius:10px;background:#edf5fa;font:700 11px 'IBM Plex Mono',monospace;color:#2287bd}
+    .exp-steps h4{font:800 15px Manrope,sans-serif;margin:2px 0 7px}
+    .exp-steps p{margin:0;color:#697e8e;font-size:13px;line-height:1.75}
+    .exp-tech{display:flex;gap:7px;flex-wrap:wrap;padding-top:23px;border-top:1px solid #e4eaf0}
+    /* Projects */
+    .projects-section{background:#f8fafc}
+    .projects-controls{display:flex;align-items:center;justify-content:space-between;gap:20px;margin-bottom:25px}
+    .filter-set{display:flex;align-items:center;gap:7px;flex-wrap:wrap}
+    .filter-btn{padding:11px 15px;border-radius:10px;border:1px solid #dce5ed;background:#fff;font-size:12px;font-weight:700;color:#587082;transition:background .2s,border-color .2s,color .2s}
+    .filter-btn:hover{border-color:#a6cddd}
+    .filter-btn[aria-pressed="true"]{background:#102b45;color:#fff;border-color:#102b45}
+    .project-count{font:500 11px 'IBM Plex Mono',monospace;color:#8191a3}
+    .projects-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:23px}
+    .project-card{border:1px solid #e0e7ef;background:#fff;border-radius:22px;overflow:hidden;box-shadow:0 6px 22px rgba(14,42,67,.025);transition:transform .22s,box-shadow .22s,border-color .22s}
+    .project-card:hover{transform:translateY(-4px);border-color:#b8d8e5;box-shadow:0 22px 55px rgba(9,48,79,.09)}
+    .project-card[hidden]{display:none!important}
+    .project-media{position:relative;height:255px;overflow:hidden;display:flex;align-items:center;justify-content:center;background:#10263f}
+    .project-media img{position:absolute;z-index:3;inset:0;width:100%;height:100%;object-fit:cover;transition:transform .55s ease}
+    .project-card:hover .project-media img{transform:scale(1.045)}
+    .project-media::before{content:"";position:absolute;inset:0;background:radial-gradient(ellipse at 70% 20%,rgba(115,205,243,.2),transparent 58%),linear-gradient(135deg,#102b46,#0b1729)}
+    .project-media::after{content:"";position:absolute;inset:0;background-image:linear-gradient(rgba(255,255,255,.03) 1px,transparent 1px),linear-gradient(90deg,rgba(255,255,255,.03) 1px,transparent 1px);background-size:29px 29px;pointer-events:none}
+    .project-media.academic::before{background:radial-gradient(ellipse at 70% 15%,rgba(99,238,205,.21),transparent 55%),linear-gradient(135deg,#16445c,#101f38)}
+    .project-art{position:relative;z-index:1;width:min(90%,440px);height:100%;display:grid;place-items:center}
+    .project-art svg{width:100%;height:100%;max-height:215px;overflow:visible;filter:drop-shadow(0 20px 23px rgba(0,0,0,.13))}
+    .project-media .project-type{position:absolute;z-index:4;top:18px;left:20px;background:rgba(8,27,44,.77);border:1px solid rgba(255,255,255,.17);backdrop-filter:blur(7px);color:#d4eff7;border-radius:7px;padding:8px 10px;font:600 10px 'IBM Plex Mono',monospace}
+    .project-media .project-id{position:absolute;z-index:4;right:20px;top:18px;color:#e2f1f5;font:500 11px 'IBM Plex Mono',monospace;text-shadow:0 1px 5px #203346}
+    .project-body{padding:27px 28px 26px}
+    .project-kicker{font:600 10px 'IBM Plex Mono',monospace;letter-spacing:.12em;color:#1a83b9;text-transform:uppercase}
+    .project-body h3{font:800 clamp(18px,2vw,22px)/1.4 Manrope,sans-serif;letter-spacing:-.043em;margin:11px 0}
+    .project-body p{font-size:13px;line-height:1.8;color:#6a7e90;margin:0;min-height:69px}
+    .project-bottom{display:flex;justify-content:space-between;gap:14px;align-items:center;border-top:1px solid #edf0f4;margin-top:22px;padding-top:20px}
+    .project-bottom .tag-set{display:flex;flex-wrap:wrap;gap:6px;max-width:75%}
+    .project-bottom .tag{font-size:9px;padding:6px 8px}
+    .project-more{border:0;background:#e8f6fc;color:#156c9c;border-radius:10px;min-height:42px;padding:0 12px;display:flex;align-items:center;justify-content:center;gap:8px;flex:none;font-size:11px;font-weight:800;transition:background .2s,transform .2s}
+    .project-more:hover{background:#c6eefa;transform:translate(2px,-2px)}
+    .project-more svg{width:19px;height:19px}
+    .projects-disclaimer{font-size:11px;color:#7c8d9e;line-height:1.6;margin-top:24px}
+    /* Academic / skills */
+    .journey-section{background:white}
+    .journey-layout{display:grid;grid-template-columns:1fr 1fr;gap:82px}
+    .journey-list{margin-top:33px;position:relative;border-left:1px solid #dce6ed;padding-left:27px}
+    .journey-item{position:relative;padding:0 0 28px}
+    .journey-item:last-child{padding-bottom:0}
+    .journey-item::before{content:"";position:absolute;left:-33px;top:4px;width:11px;height:11px;background:white;border:3px solid #2d9dc9;border-radius:50%;box-shadow:0 0 0 4px #eef8fb}
+    .journey-date{font:600 11px 'IBM Plex Mono',monospace;color:#298ab8}
+    .journey-item h3{font:800 15px Manrope,sans-serif;margin:10px 0 6px;letter-spacing:-.028em}
+    .journey-item p{font-size:13px;line-height:1.65;color:#697d8e;margin:0}
+    .skills-panel{background:#f5f8fb;border:1px solid #e4ebf0;border-radius:22px;padding:32px}
+    .skills-panel h3{font:800 20px Manrope,sans-serif;margin:0 0 7px;letter-spacing:-.04em}
+    .skills-intro{color:#73899a;font-size:13px;line-height:1.6;margin:0 0 22px}
+    .skill-group{padding:19px 0;border-top:1px solid #e0e7ed}
+    .skill-group-head{display:flex;align-items:center;gap:9px;margin-bottom:13px;font:800 13px Manrope,sans-serif}
+    .skill-dot{width:8px;height:8px;border-radius:50%;background:#2a99cc;flex:none}
+    .skill-chips{display:flex;flex-wrap:wrap;gap:8px}
+    .skill-chips span{background:white;border:1px solid #dce6ee;border-radius:8px;color:#50677c;font-size:11px;font-weight:600;padding:9px 11px}
+    /* Contact */
+    .contact-section{padding:64px 0 97px;background:#fff}
+    .contact-card{color:#fff;background:linear-gradient(125deg,#0a1628 5%,#102f4a 75%,#0c3b56);border-radius:26px;padding:65px 72px;position:relative;overflow:hidden;display:flex;align-items:center;justify-content:space-between;gap:34px}
+    .contact-card::after{content:"";position:absolute;right:-90px;bottom:-245px;width:480px;height:480px;border:1px solid rgba(120,223,245,.17);border-radius:50%;box-shadow:0 0 0 48px rgba(120,223,245,.04),0 0 0 96px rgba(120,223,245,.035)}
+    .contact-copy{position:relative;z-index:1;max-width:640px}
+    .contact-copy .eyebrow{color:#7ddcf3}
+    .contact-copy h2{font:800 clamp(2rem,4vw,3.3rem)/1.15 Manrope,sans-serif;letter-spacing:-.055em;margin:15px 0 15px}
+    .contact-copy p{font-size:14px;line-height:1.75;color:#abc4d6;margin:0}
+    .contact-actions{display:flex;flex-direction:column;gap:11px;align-items:stretch;position:relative;z-index:1;flex:none}
+    .contact-actions .btn{width:210px}
+    .site-footer{background:#0a1628;color:#92a9ba;padding:34px 0}
+    .footer-inner{display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:20px}
+    .footer-inner p{margin:0;font-size:12px;line-height:1.5}
+    .footer-inner strong{color:#fff}
+    .footer-links{display:flex;gap:25px;flex-wrap:wrap}
+    .footer-links a{color:#a9c0d1;font-size:12px}
+    .footer-links a:hover{color:#75e0fa}
+    /* Modal */
+    .project-dialog{width:min(690px,calc(100% - 30px));max-height:min(85vh,900px);border:0;border-radius:23px;padding:0;background:white;color:var(--ink);box-shadow:0 35px 100px rgba(0,0,0,.35)}
+    .project-dialog::backdrop{background:rgba(5,17,31,.75);backdrop-filter:blur(6px)}
+    .dialog-top{background:#0c263d;color:#fff;padding:29px 35px;position:relative}
+    .dialog-top .eyebrow{color:#86dff6}
+    .dialog-top h2{font:800 clamp(22px,4vw,30px)/1.22 Manrope,sans-serif;letter-spacing:-.05em;margin:14px 42px 8px 0}
+    .dialog-top p{font-size:12px;line-height:1.6;color:#afc6d7;margin:0}
+    .dialog-close{position:absolute;right:23px;top:25px;width:36px;height:36px;border:1px solid rgba(255,255,255,.26);background:rgba(255,255,255,.08);border-radius:10px;color:white;display:grid;place-items:center;font-size:20px}
+    .dialog-close:hover{background:rgba(255,255,255,.18)}
+    .dialog-inner{padding:30px 35px 35px}
+    .dialog-intro{font-size:15px;color:#466174;line-height:1.75;margin:0 0 23px}
+    .dialog-row{padding:18px 0;border-top:1px solid #e6edf2}
+    .dialog-row h3{font:800 12px Manrope,sans-serif;text-transform:uppercase;letter-spacing:.04em;color:#227cae;margin:0 0 8px}
+    .dialog-row p{font-size:13px;line-height:1.8;color:#61798b;margin:0}
+    .dialog-bottom{display:flex;justify-content:space-between;gap:12px;align-items:center;flex-wrap:wrap;border-top:1px solid #e6edf2;padding-top:23px}
+    .dialog-bottom .tag-set{display:flex;gap:6px;flex-wrap:wrap}
+    .dialog-bottom button{border:1px solid #cee0ea;border-radius:10px;background:#f1f7fa;color:#1c688e;font-size:12px;font-weight:700;padding:11px 14px}
+    /* Responsive */
+    @media(max-width:1100px){.hero-grid{gap:42px}.floating-note{left:-25px}.experience-layout{gap:38px}.journey-layout{gap:45px}.nav-links{gap:18px}}
+    @media(max-width:900px){
+      .container{width:min(100% - 48px,1180px)}
+      .nav-links{position:absolute;top:calc(100% - 1px);left:0;right:0;display:none;flex-direction:column;align-items:stretch;gap:0;background:rgba(9,24,42,.98);padding:8px 24px 24px;box-shadow:0 28px 35px rgba(0,0,0,.21);border-top:1px solid rgba(255,255,255,.08)}
+      .nav-links.is-open{display:flex}
+      .nav-links a{padding:15px 4px;border-bottom:1px solid rgba(255,255,255,.08);font-size:15px}
+      .menu-toggle{display:flex}
+      .nav-contact{display:none}
+      .hero{padding:142px 0 90px}
+      .hero-grid{grid-template-columns:1fr 0.82fr;gap:25px}
+      .hero h1{font-size:clamp(2.9rem,6vw,5rem)}
+      .hero-desc{font-size:14px}
+      .portrait{height:385px}
+      .floating-note{top:25px;left:-20px;padding:11px 13px}
+      .floating-note .bolt{width:30px;height:30px}
+      .stat{padding:26px 14px;gap:11px}
+      .stat-value{font-size:22px}
+      .stat-desc{font-size:11px}
+      .expertise-card{padding:25px 21px}
+      .contact-card{padding:50px 42px}
     }
-    .card-project {
-      transition: transform 0.25s ease, box-shadow 0.25s ease, border-color 0.25s ease;
+    @media(max-width:700px){
+      .container{width:calc(100% - 38px)}
+      .hero{padding:133px 0 83px}
+      .hero-grid{grid-template-columns:1fr;gap:43px}
+      .hero h1{font-size:clamp(3rem,11vw,5.2rem)}
+      .hero-desc{max-width:590px}
+      .hero-art{margin-inline:auto;max-width:400px;width:86%}
+      .portrait{height:420px}
+      .floating-note{left:-21px;top:43px}
+      .hero-bottom-inner{font-size:9px;letter-spacing:.1em}
+      .stats{grid-template-columns:repeat(3,1fr)}
+      .stat{display:block;padding:20px 10px!important;text-align:center}
+      .stat-value{font-size:22px}
+      .stat-desc{margin:6px auto 0;font-size:10px}
+      .section{padding:82px 0}
+      .section-intro{align-items:start;flex-direction:column;gap:8px;margin-bottom:30px}
+      .expertise-grid{grid-template-columns:1fr;gap:13px}
+      .expertise-card{padding:26px}
+      .expertise-icon{margin-bottom:18px}
+      .experience-layout{grid-template-columns:1fr;gap:27px}
+      .experience-left{position:static}
+      .projects-grid{grid-template-columns:1fr;gap:18px}
+      .project-media{height:250px}
+      .journey-layout{grid-template-columns:1fr;gap:48px}
+      .contact-card{flex-direction:column;align-items:stretch;gap:27px;padding:41px 30px}
+      .contact-actions{flex-direction:row;flex-wrap:wrap}
+      .contact-actions .btn{width:auto;flex:1}
     }
-    .card-project:hover {
-      transform: translateY(-4px);
-      box-shadow: 0 16px 32px -8px rgba(15, 23, 42, 0.08);
-      border-color: #CBD5E1;
+    @media(max-width:440px){
+      .brand-text{font-size:13px}.brand-text small{font-size:8px}
+      .hero h1{font-size:clamp(2.5rem,10.5vw,3.2rem)}
+      .hero h1 .name{white-space:normal}
+      .hero-status{font-size:9.5px;padding:10px}
+      .hero-actions{flex-direction:column;align-items:stretch}
+      .hero-actions .btn{width:100%}
+      .hero-contact{gap:11px}
+      .hero-art{width:90%;max-width:340px}
+      .portrait{height:365px}
+      .floating-note{left:-17px;top:33px}
+      .stats{grid-template-columns:1fr}
+      .stat{display:flex;text-align:left;padding:14px 4px!important;border-right:0;border-bottom:1px solid var(--line);gap:17px}
+      .stat-desc{margin:0;max-width:none;font-size:11px}
+      .exp-panel{padding:26px 20px}
+      .exp-header{display:block}
+      .exp-date{display:inline-block;margin-top:13px}
+      .projects-controls{align-items:start;flex-direction:column;gap:12px}
+      .project-media{height:220px}
+      .project-body{padding:23px 20px}
+      .skills-panel{padding:24px 19px}
+      .contact-actions{flex-direction:column}
+      .contact-actions .btn{width:100%}
+      .dialog-top{padding:25px 23px}
+      .dialog-inner{padding:23px}
     }
+    @media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}*,*::before,*::after{animation:none!important;transition:none!important}}
   </style>
 </head>
-<body class="antialiased selection:bg-sky-100 selection:text-sky-900">
+<body>
+  <a class="skip-link" href="#contenu">Aller au contenu</a>
 
-  <!-- NAVIGATION -->
-  <header class="fixed top-5 inset-x-0 z-50 flex justify-center px-4">
-    <nav class="bg-white/95 backdrop-blur-md border border-slate-200/80 shadow-sm px-6 py-3 rounded-full flex items-center justify-between w-full max-w-5xl">
-      <a href="#" class="flex items-center gap-2.5 font-bold text-slate-900 tracking-tight">
-        <span class="w-8 h-8 rounded-full bg-[#0B2545] text-white flex items-center justify-center text-xs font-bold font-mono">TN</span>
-        <span>Thery NDZOBE</span>
+  <!-- Navigation responsive -->
+  <header class="site-header" id="site-header">
+    <nav class="container nav-shell" aria-label="Navigation principale">
+      <a class="brand" href="#accueil" aria-label="Thery NDZOBE — Accueil">
+        <span class="brand-mark">TN</span>
+        <span class="brand-text">Thery NDZOBE<small>Portfolio / GEII</small></span>
       </a>
-
-      <div class="hidden md:flex items-center gap-7 text-sm font-medium text-slate-600">
-        <a href="#missions" class="hover:text-[#0077B5] transition-colors">Missions BE</a>
-        <a href="#projets" class="hover:text-[#0077B5] transition-colors">Preuves Techniques</a>
-        <a href="#parcours" class="hover:text-[#0077B5] transition-colors">Formation</a>
-        <a href="#competences" class="hover:text-[#0077B5] transition-colors">Compétences</a>
+      <div class="nav-links" id="navigation-mobile">
+        <a href="#expertise">Expertise</a>
+        <a href="#experience">Expérience</a>
+        <a href="#projets">Projets</a>
+        <a href="#parcours">Parcours</a>
+        <a href="#contact">Contact</a>
       </div>
-
-      <div class="flex items-center gap-3">
-        <a href="cv.pdf" download="CV_Thery_NDZOBE.pdf" class="inline-flex items-center gap-2 bg-[#0B2545] hover:bg-[#0077B5] text-white text-xs font-semibold px-4 py-2 rounded-full transition-all shadow-sm">
-          <i data-lucide="download" class="w-3.5 h-3.5"></i>
-          <span>Télécharger CV</span>
-        </a>
+      <div class="nav-right">
+        <a class="nav-contact" href="mailto:theryprofessionel@gmail.com">Me contacter ↗</a>
+        <button class="menu-toggle" id="menu-toggle" aria-expanded="false" aria-controls="navigation-mobile" aria-label="Ouvrir le menu">
+          <svg class="icon-menu" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M4 7h16M4 12h16M4 17h16"/></svg>
+          <svg class="icon-x" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M5 5l14 14M19 5 5 19"/></svg>
+        </button>
       </div>
     </nav>
   </header>
 
-  <main class="max-w-5xl mx-auto px-6 pt-32 pb-20">
-
-    <!-- HERO SECTION -->
-    <section class="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center mb-20">
-      
-      <div class="lg:col-span-7 space-y-6">
-        <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-sky-50 border border-sky-100 text-xs font-semibold text-[#0077B5]">
-          <span class="w-2 h-2 rounded-full bg-[#0077B5]"></span>
-          <span>Étudiant en BUT3 GEII • Recherche contrat d'alternance ingénieur (3 ans)</span>
+  <main id="contenu">
+    <!-- Première impression -->
+    <section class="hero" id="accueil" aria-labelledby="hero-title">
+      <div class="container hero-grid">
+        <div class="hero-content">
+          <div class="hero-status"><span class="status-dot" aria-hidden="true"></span> ALTERNANCE INGÉNIEUR RECHERCHÉE · RENTRÉE 2027</div>
+          <h1 id="hero-title">Thery <span class="name">NDZOBE<span style="color:#fff">.</span></span></h1>
+          <p class="hero-title-note">De la conception électrique à la réalisation industrielle.</p>
+          <p class="hero-desc">Étudiant en <strong style="color:#eff9ff">BUT3 Génie Électrique et Informatique Industrielle</strong> à l'IUT de Poitiers, je suis alternant en bureau d'études électriques chez <strong style="color:#eff9ff">ANNEALSYS (Groupe ECM)</strong>. Je conçois et fiabilise des schémas électriques pour des équipements industriels liés aux semi-conducteurs.</p>
+          <div class="hero-actions">
+            <a href="#projets" class="btn btn-primary">Explorer mes projets
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14m-6-6 6 6-6 6"/></svg>
+            </a>
+            <a href="cv.pdf" target="_blank" rel="noopener" class="btn btn-outline cv-link">Consulter mon CV
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M14 3h6v6m0-6-9 9M20 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V6a2 2 0 0 1 2-2h6"/></svg>
+            </a>
+          </div>
+          <div class="hero-contact">
+            <a href="https://www.linkedin.com/in/thery-ndzobe-ba0485364/" target="_blank" rel="noopener noreferrer">
+              <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M20.45 2H3.55C2.69 2 2 2.68 2 3.52v16.96c0 .84.69 1.52 1.55 1.52h16.9c.86 0 1.55-.68 1.55-1.52V3.52c0-.84-.69-1.52-1.55-1.52ZM8 18.75H5v-9h3v9ZM6.5 8.5a1.74 1.74 0 1 1 0-3.48 1.74 1.74 0 0 1 0 3.48Zm12.25 10.25h-3V14.4c0-1.04-.02-2.38-1.45-2.38-1.45 0-1.67 1.13-1.67 2.3v4.43h-3v-9h2.88v1.23h.04c.4-.76 1.38-1.56 2.83-1.56 3.03 0 3.59 1.99 3.59 4.58v4.75Z"/></svg>
+              LinkedIn ↗
+            </a>
+            <a href="mailto:theryprofessionel@gmail.com">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="m3 7 9 6 9-6"/></svg>
+              theryprofessionel@gmail.com
+            </a>
+          </div>
         </div>
-
-        <h1 class="text-4xl sm:text-5xl font-extrabold text-[#0B2545] tracking-tight leading-tight">
-          Bonjour, je suis <br/>
-          <span class="text-[#0077B5]">Thery NDZOBE</span>.
-        </h1>
-
-        <p class="text-base sm:text-lg text-slate-600 leading-relaxed font-normal">
-          Étudiant en 3ᵉ année de <strong>BUT GEII</strong> (Parcours Électricité & Maîtrise de l'Énergie à l'IUT de Poitiers) et <strong>alternant Dessinateur-Projeteur en Électricité</strong> au Bureau d'Études d'<strong>ANNEALSYS</strong> (Groupe ECM).
-          J'interviens sur la CAO électrique (SEE Electrical), l'audit de câblage et l'intégration de sous-ensembles industriels pour équipements de semi-conducteurs. Je recherche une <strong>alternance de 3 ans</strong> pour intégrer un cursus d'<strong>ingénieur en Génie Électrique, Automatique & Robotique</strong>.
-        </p>
-
-        <!-- Actions -->
-        <div class="flex flex-wrap items-center gap-3.5 pt-2">
-          <a href="#projets" class="inline-flex items-center gap-2 bg-[#0077B5] hover:bg-[#005f93] text-white text-sm font-semibold px-5 py-3 rounded-xl transition-all shadow-sm">
-            <span>Consulter mes réalisations</span>
-            <i data-lucide="arrow-down" class="w-4 h-4"></i>
-          </a>
-          
-          <a href="cv.pdf" download="CV_Thery_NDZOBE.pdf" class="inline-flex items-center gap-2 bg-white hover:bg-slate-50 text-slate-800 text-sm font-semibold px-5 py-3 rounded-xl border border-slate-200 transition-all shadow-sm">
-            <i data-lucide="file-text" class="w-4 h-4 text-[#C8102E]"></i>
-            <span>Télécharger mon CV (PDF)</span>
-          </a>
-        </div>
-
-        <!-- Contact direct -->
-        <div class="flex flex-wrap items-center gap-6 pt-2 text-xs text-slate-500 font-medium">
-          <span class="flex items-center gap-1.5">
-            <i data-lucide="map-pin" class="w-3.5 h-3.5 text-slate-400"></i> Poitiers (Mobilité nationale)
-          </span>
-          <a href="mailto:theryprofessionel@gmail.com" class="flex items-center gap-1.5 hover:text-[#0077B5] transition-colors">
-            <i data-lucide="mail" class="w-3.5 h-3.5 text-slate-400"></i> theryprofessionel@gmail.com
-          </a>
-          <a href="https://linkedin.com" target="_blank" class="flex items-center gap-1.5 text-[#0077B5] hover:underline">
-            <i data-lucide="linkedin" class="w-3.5 h-3.5"></i> Profil LinkedIn
-          </a>
+        <div class="hero-art" aria-label="Portrait de Thery NDZOBE et domaine d'expertise">
+          <div class="portrait-outline"><div class="portrait">
+            <div class="portrait-initials" aria-hidden="true">TN</div>
+            <!-- Réutilise la photo du dépôt d'origine si elle existe. Sinon, les initiales restent visibles. -->
+            <img src="photoportfolio.png" alt="Portrait de Thery NDZOBE" id="portrait-image">
+            <div class="portrait-caption">
+              <div><strong>Génie électrique & CAO</strong><span>Bureau d'études · Industrie</span></div>
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m13 2-8 11h6l-1 9 9-12h-6l0-8Z"/></svg>
+            </div>
+          </div></div>
+          <div class="floating-note" aria-hidden="true">
+            <span class="bolt"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m13 2-8 11h6l-1 9 9-12h-6V2Z"/></svg></span>
+            <div><strong>Puissance & commande</strong><span>400 V / 24 V DC</span></div>
+          </div>
         </div>
       </div>
-
-      <!-- Photo profil technique nette et dégagée -->
-      <div class="lg:col-span-5 flex justify-center">
-        <div class="relative w-full max-w-xs sm:max-w-sm aspect-[4/5] rounded-3xl overflow-hidden border border-slate-200 shadow-xl bg-slate-100">
-          <img 
-            src="photoportfolio.png" 
-            alt="Thery NDZOBE" 
-            class="w-full h-full object-cover object-center"
-            onerror="this.onerror=null; this.src='photoportfolio.jpg';"
-          >
-        </div>
-      </div>
-
+      <div class="hero-bottom"><div class="container hero-bottom-inner"><span>Conception · Précision · Industrie</span><span>Défiler pour découvrir <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 4v16m-6-6 6 6 6-6"/></svg></span></div></div>
     </section>
 
-    <!-- CHIFFRES & INDICATEURS CLÉS FACTUELS -->
-    <section class="grid grid-cols-2 md:grid-cols-4 gap-4 mb-24">
-      <div class="bg-white p-5 rounded-2xl border border-slate-200/80 shadow-sm">
-        <div class="text-2xl sm:text-3xl font-extrabold text-[#0B2545]">2025–2027</div>
-        <p class="text-xs text-slate-500 font-medium mt-1">Alternance BE chez Annealsys</p>
-      </div>
-      <div class="bg-white p-5 rounded-2xl border border-slate-200/80 shadow-sm">
-        <div class="text-2xl sm:text-3xl font-extrabold text-[#0077B5]">BUT3 GEII</div>
-        <p class="text-xs text-slate-500 font-medium mt-1">IUT de Poitiers (En cours)</p>
-      </div>
-      <div class="bg-white p-5 rounded-2xl border border-slate-200/80 shadow-sm">
-        <div class="text-2xl sm:text-3xl font-extrabold text-[#0B2545]">Mention B.</div>
-        <p class="text-xs text-slate-500 font-medium mt-1">Baccalauréat Général (Maths-PC)</p>
-      </div>
-      <div class="bg-white p-5 rounded-2xl border border-slate-200/80 shadow-sm">
-        <div class="text-2xl sm:text-3xl font-extrabold text-[#0077B5]">3 Ans</div>
-        <p class="text-xs text-slate-500 font-medium mt-1">Contrat ingénieur recherché</p>
-      </div>
-    </section>
+    <section class="stats-band" aria-label="Mon parcours en bref"><div class="container stats">
+      <div class="stat"><span class="stat-value">BUT3 GEII</span><span class="stat-desc">Électricité & maîtrise de l'énergie · IUT de Poitiers</span></div>
+      <div class="stat"><span class="stat-value">2025–2027</span><span class="stat-desc">Alternance en bureau d'études chez ANNEALSYS</span></div>
+      <div class="stat"><span class="stat-value">2027</span><span class="stat-desc">Objectif : école d'ingénieurs en alternance</span></div>
+    </div></section>
 
-    <!-- MISSIONS EN ENTREPRISE : RÔLE INDIVIDUEL VS TRAVAIL D'ÉQUIPE -->
-    <section id="missions" class="space-y-6 mb-24">
-      <div class="flex flex-col sm:flex-row sm:items-end justify-between gap-4">
-        <div>
-          <span class="text-xs font-bold uppercase tracking-wider text-[#0077B5]">Bureau d'Études Électrique</span>
-          <h2 class="text-2xl font-bold text-[#0B2545] mt-1">Missions chez ANNEALSYS (Groupe ECM)</h2>
-        </div>
-        <a href="https://www.annealsys.com/fr/" target="_blank" class="inline-flex items-center gap-1.5 text-xs font-semibold text-[#0077B5] hover:underline bg-sky-50 px-3 py-1.5 rounded-lg border border-sky-100 self-start sm:self-auto">
-          <span>Découvrir l'entreprise</span>
-          <i data-lucide="external-link" class="w-3.5 h-3.5"></i>
-        </a>
-      </div>
-
-      <div class="bg-white rounded-3xl border border-slate-200/80 p-7 sm:p-9 shadow-sm space-y-6">
-        <div>
-          <div class="flex items-center justify-between flex-wrap gap-2 mb-2">
-            <h3 class="text-lg font-bold text-slate-900">Dessinateur-Projeteur en Électricité (Alternance 2 ans)</h3>
-            <span class="text-xs font-mono font-semibold text-[#0077B5] bg-sky-50 px-3 py-1 rounded-full border border-sky-100">Septembre 2025 – Août 2027</span>
-          </div>
-          <p class="text-sm text-slate-600 leading-relaxed">
-            Intégré au bureau d’études sous la supervision du Responsable Pôle Électrique. Alors que les architectures système et choix de composants majeurs sont pilotés par l’ingénierie globale de l'entreprise, mes responsabilités opérationnelles portent sur la conception d'exécution, la mise à jour des dossiers techniques et la fiabilisation des liaisons atelier.
-          </p>
-        </div>
-
-        <div class="grid grid-cols-1 md:grid-cols-2 gap-6 pt-2">
-          <div class="space-y-2 bg-slate-50 p-4 rounded-2xl border border-slate-100">
-            <h4 class="text-xs font-bold uppercase tracking-wider text-slate-900 flex items-center gap-2">
-              <span class="w-2 h-2 rounded-full bg-[#0077B5]"></span> Mes Contributions Directes au BE
-            </h4>
-            <ul class="text-xs text-slate-600 space-y-2 leading-relaxed">
-              <li>• <strong>Plans CAO & Schémas d'exécution :</strong> Réalisation et modification de folios de puissance (400V) et de commande (24VDC) sous SEE Electrical.</li>
-              <li>• <strong>Fiabilisation des borniers :</strong> Audit méthodique des équipotentielles pour corriger les erreurs de génération logicielle avant envoi aux câbleurs.</li>
-              <li>• <strong>Nomenclature & Codification :</strong> Renseignement rigoureux des doubles références (codes fabricants Entrelec et codes articles internes).</li>
-            </ul>
-          </div>
-
-          <div class="space-y-2 bg-slate-50 p-4 rounded-2xl border border-slate-100">
-            <h4 class="text-xs font-bold uppercase tracking-wider text-slate-900 flex items-center gap-2">
-              <span class="w-2 h-2 rounded-full bg-[#0B2545]"></span> Interactions & Systèmes Étudiés
-            </h4>
-            <ul class="text-xs text-slate-600 space-y-2 leading-relaxed">
-              <li>• <strong>Gamme de réacteurs RTP/CVD :</strong> Travail sur les dossiers machines AS-ONE, AS-Master, MC-050 et Jipelec.</li>
-              <li>• <strong>Interface Automatisme / Robotique :</strong> Échanges avec les automaticiens pour l'affectation des E/S Beckhoff et le raccordement des modules de transfert de wafers (SMIF).</li>
-              <li>• <strong>Qualité & Méthodes :</strong> Participation aux revues de conception pour fluidifier le passage des dossiers entre le BE et l'atelier de montage.</li>
-            </ul>
-          </div>
-        </div>
-
-        <div class="flex flex-wrap gap-2 pt-2 border-t border-slate-100">
-          <span class="text-xs font-mono bg-slate-100 text-slate-700 px-2.5 py-1 rounded-md">SEE Electrical</span>
-          <span class="text-xs font-mono bg-slate-100 text-slate-700 px-2.5 py-1 rounded-md">Borniers & Equipotentielles</span>
-          <span class="text-xs font-mono bg-slate-100 text-slate-700 px-2.5 py-1 rounded-md">Systèmes RTP</span>
-          <span class="text-xs font-mono bg-slate-100 text-slate-700 px-2.5 py-1 rounded-md">Règles Atelier</span>
-          <span class="text-xs font-mono bg-slate-100 text-slate-700 px-2.5 py-1 rounded-md">Normes NFC 15-100</span>
+    <!-- Expertise -->
+    <section class="section" id="expertise" aria-labelledby="expertise-title">
+      <div class="container">
+        <div class="section-intro"><div><span class="eyebrow"><span class="eyebrow-line"></span> 01 / Domaines de compétence</span><h2 class="section-heading" id="expertise-title">Une approche technique,<br>du plan au terrain.</h2></div><p class="section-lead">Mon parcours associe l'expérience du bureau d'études aux projets de génie électrique, d'automatisme et d'électronique réalisés en formation.</p></div>
+        <div class="expertise-grid">
+          <article class="expertise-card"><div class="expertise-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linejoin="round" stroke-linecap="round" aria-hidden="true"><path d="M4 4h16v16H4zM4 10h6M10 4v6M15 10v10M10 15h5M15 10h5"/></svg></div><span class="expertise-number">DOMAINE / 01</span><h3>Conception électrique</h3><p>Réalisation et modification de schémas de puissance et de commande, contrôle des borniers et mise à jour des dossiers destinés à la production.</p><div class="expertise-tags"><span class="tag">SEE Electrical Expert</span><span class="tag">400 V / 24 V DC</span><span class="tag">Borniers</span></div></article>
+          <article class="expertise-card"><div class="expertise-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linejoin="round" stroke-linecap="round" aria-hidden="true"><rect x="4" y="3" width="16" height="18" rx="2"/><path d="M8 7h8M8 11h3M8 15h8M8 18h5"/></svg></div><span class="expertise-number">DOMAINE / 02</span><h3>Automatisme industriel</h3><p>Étude des systèmes automatisés, des entrées/sorties industrielles, de la commande de moteurs et de la logique de contrôle.</p><div class="expertise-tags"><span class="tag">Beckhoff</span><span class="tag">Schneider</span><span class="tag">GRAFCET / Ladder</span></div></article>
+          <article class="expertise-card"><div class="expertise-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linejoin="round" stroke-linecap="round" aria-hidden="true"><rect x="6" y="6" width="12" height="12" rx="2"/><path d="M9 2v4m6-4v4M9 18v4m6-4v4M2 9h4m-4 6h4m12-6h4m-4 6h4"/></svg></div><span class="expertise-number">DOMAINE / 03</span><h3>Électronique & embarqué</h3><p>Projets autour des microcontrôleurs, de l'acquisition de mesures, de l'asservissement et de la conversion d'énergie.</p><div class="expertise-tags"><span class="tag">C embarqué</span><span class="tag">dsPIC33</span><span class="tag">MATLAB / Simulink</span></div></article>
         </div>
       </div>
     </section>
 
-    <!-- PREUVES TECHNIQUES : PROBLÈMES, SOLUTIONS, RÉSULTATS -->
-    <section id="projets" class="space-y-8 mb-24">
-      <div class="flex items-end justify-between border-b border-slate-200/80 pb-4">
-        <div>
-          <h2 class="text-2xl font-bold text-[#0B2545]">Preuves Techniques & Méthodologie</h2>
-          <p class="text-sm text-slate-500 mt-1">Extraits de dossiers réels, difficultés techniques et solutions apportées.</p>
+    <!-- Expérience -->
+    <section class="section experience-section" id="experience" aria-labelledby="experience-title"><div class="container experience-layout">
+      <div class="experience-left"><span class="eyebrow"><span class="eyebrow-line"></span> 02 / Expérience professionnelle</span><h2 class="section-heading" id="experience-title">Au cœur du bureau d'études.</h2><p>Chez ANNEALSYS, entreprise du Groupe ECM spécialisée dans les équipements de traitement thermique pour les semi-conducteurs, je contribue à la réalisation de la documentation électrique des machines industrielles.</p><p>Je travaille en lien avec les membres du bureau d'études, les automaticiens et les équipes de câblage, dans une démarche de qualité documentaire et de cohérence technique.</p><div class="company-signature"><span class="symbol">ANNEALSYS</span><div><strong style="font-size:12px;color:#274b67">Groupe ECM</strong><small>Équipements pour l'industrie des semi-conducteurs</small></div></div></div>
+      <div class="exp-panel"><div class="exp-header"><div><span class="eyebrow">BUREAU D'ÉTUDES ÉLECTRIQUES</span><h3>Alternant dessinateur-projeteur en électricité</h3><p>ANNEALSYS · Montpellier</p></div><span class="exp-date">2025 — 2027</span></div>
+        <ol class="exp-steps">
+          <li><span class="step-num">01</span><div><h4>Créer et adapter les schémas</h4><p>Conception d'exécution et mise à jour de folios de puissance et de commande sous SEE Electrical Expert, selon les configurations des machines.</p></div></li>
+          <li><span class="step-num">02</span><div><h4>Fiabiliser la documentation</h4><p>Vérification de la cohérence des borniers, des équipotentielles, des liaisons et des références matérielles avant transmission à l'atelier.</p></div></li>
+          <li><span class="step-num">03</span><div><h4>Faire le lien entre études et atelier</h4><p>Prise en compte des retours techniques, correction des dossiers et échanges avec les équipes de conception, d'automatisme et de production.</p></div></li>
+        </ol>
+        <div class="exp-tech"><span class="tag">SEE Electrical Expert</span><span class="tag">CAO électrique</span><span class="tag">RTP / CVD</span><span class="tag">Nomenclatures</span><span class="tag">Documentation technique</span></div>
+      </div>
+    </div></section>
+
+    <!-- Projets. Les images existantes du dépôt d'origine sont réutilisées si elles sont présentes. -->
+    <section class="section projects-section" id="projets" aria-labelledby="projects-title"><div class="container">
+      <div class="section-intro"><div><span class="eyebrow"><span class="eyebrow-line"></span> 03 / Réalisations sélectionnées</span><h2 class="section-heading" id="projects-title">Des projets concrets.<br>Une méthode rigoureuse.</h2></div><p class="section-lead">Des travaux de bureau d'études et des projets académiques, présentés par leurs enjeux, les actions menées et les compétences mobilisées.</p></div>
+      <div class="projects-controls"><div class="filter-set" role="group" aria-label="Filtrer les projets"><button type="button" class="filter-btn" data-filter="all" aria-pressed="true">Tous les projets</button><button type="button" class="filter-btn" data-filter="pro" aria-pressed="false">Entreprise</button><button type="button" class="filter-btn" data-filter="school" aria-pressed="false">Formation</button></div><span class="project-count" id="project-count" aria-live="polite">06 projets</span></div>
+      <div class="projects-grid" id="projects-grid">
+        <!-- Projet 01 -->
+        <article class="project-card" data-category="pro"><div class="project-media"><div class="project-art" aria-hidden="true"><svg viewBox="0 0 460 220" fill="none"><rect x="34" y="39" width="392" height="148" rx="12" fill="#183c56" stroke="#65bfdc" stroke-opacity=".6"/><path d="M55 69h350M55 158h350" stroke="#41809e"/><g fill="#d9f2fa" stroke="#7aa7c4" stroke-width="2"><rect x="64" y="84" width="51" height="60" rx="5"/><rect x="124" y="84" width="51" height="60" rx="5"/><rect x="184" y="84" width="51" height="60" rx="5"/><rect x="244" y="84" width="51" height="60" rx="5"/><rect x="304" y="84" width="51" height="60" rx="5"/></g><g stroke="#4b7b9a" stroke-width="3"><path d="M89 96v14m60-14v14m60-14v14m60-14v14m60-14v14"/><path d="M76 127h26m34 0h26m34 0h26m34 0h26m34 0h26"/></g><path d="M89 84V56h120v28M269 84V56h61v28" stroke="#62d5f0" stroke-width="3"/><g fill="#b1ddea" font-family="monospace" font-size="10"><text x="69" y="180">+XPA · BORNIERS</text><text x="320" y="180">24 V DC</text></g></svg></div><img src="see-bornier.png" loading="lazy" alt="Illustration du travail sur les borniers dans SEE Electrical Expert" data-fallback="hide"><span class="project-type">BUREAU D'ÉTUDES</span><span class="project-id">01 / 06</span></div><div class="project-body"><span class="project-kicker">Documentation électrique</span><h3>Fiabilisation des borniers industriels</h3><p>Contrôler les équipotentielles, détecter les incohérences de génération et fiabiliser les liaisons avant câblage.</p><div class="project-bottom"><div class="tag-set"><span class="tag">SEE Electrical</span><span class="tag">Borniers</span><span class="tag">Contrôle qualité</span></div><button type="button" class="project-more" data-project="borniers" aria-label="Voir le détail du projet Fiabilisation des borniers"><span>Voir</span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" aria-hidden="true"><path d="M5 19 19 5M7 5h12v12"/></svg></button></div></div></article>
+        <!-- Projet 02 -->
+        <article class="project-card" data-category="pro"><div class="project-media"><div class="project-art" aria-hidden="true"><svg viewBox="0 0 460 220" fill="none"><rect x="80" y="15" width="300" height="189" rx="12" fill="#d5e8f1" stroke="#85bad1" stroke-width="3"/><rect x="97" y="31" width="266" height="155" rx="5" fill="#153c56"/><rect x="113" y="47" width="115" height="58" rx="4" fill="#c5e9f7"/><rect x="121" y="56" width="32" height="41" rx="3" fill="#4e7189"/><rect x="160" y="56" width="30" height="41" rx="3" fill="#6ca6be"/><rect x="197" y="56" width="22" height="41" rx="3" fill="#47728c"/><rect x="238" y="47" width="106" height="58" rx="4" fill="#274f67" stroke="#4c91aa"/><path d="M253 60h76m-76 10h76m-76 10h76m-76 10h76" stroke="#8dc9da" stroke-width="5"/><rect x="113" y="116" width="231" height="56" rx="3" fill="#1c506e"/><g fill="#9ecee1"><rect x="124" y="126" width="20" height="36" rx="3"/><rect x="152" y="126" width="20" height="36" rx="3"/><rect x="180" y="126" width="20" height="36" rx="3"/><rect x="208" y="126" width="20" height="36" rx="3"/><rect x="236" y="126" width="20" height="36" rx="3"/></g><path d="M276 148h50" stroke="#58e1ed" stroke-width="3"/><circle cx="350" cy="193" r="3" fill="#3e7089"/></svg></div><img src="armoire-puissance-reperee.jpg" loading="lazy" alt="Armoire électrique industrielle et implantation des appareils de puissance" data-fallback="hide"><span class="project-type">BUREAU D'ÉTUDES</span><span class="project-id">02 / 06</span></div><div class="project-body"><span class="project-kicker">Puissance & commande</span><h3>Schémas et intégration d'une armoire 400 V</h3><p>Repérage et documentation des départs de puissance, appareils de protection et liaisons de commande.</p><div class="project-bottom"><div class="tag-set"><span class="tag">400 V</span><span class="tag">Protections</span><span class="tag">Schémas</span></div><button type="button" class="project-more" data-project="armoire" aria-label="Voir le détail du projet Armoire électrique"><span>Voir</span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" aria-hidden="true"><path d="M5 19 19 5M7 5h12v12"/></svg></button></div></div></article>
+        <!-- Projet 03 -->
+        <article class="project-card" data-category="pro"><div class="project-media"><div class="project-art" aria-hidden="true"><svg viewBox="0 0 460 220" fill="none"><rect x="52" y="28" width="356" height="166" rx="11" fill="#173d59" stroke="#6bbbd1"/><rect x="72" y="48" width="316" height="30" rx="4" fill="#28566f"/><circle cx="92" cy="63" r="6" fill="#75dce6"/><path d="M110 63h106m25 0h61" stroke="#9ccad9" stroke-width="5" stroke-linecap="round"/><g fill="#d4ebf6"><rect x="78" y="98" width="89" height="74" rx="6"/><rect x="185" y="98" width="89" height="74" rx="6"/><rect x="292" y="98" width="89" height="74" rx="6"/></g><g fill="#3c7999"><rect x="92" y="112" width="61" height="9" rx="2"/><rect x="199" y="112" width="61" height="9" rx="2"/><rect x="306" y="112" width="61" height="9" rx="2"/></g><g stroke="#5a90a9" stroke-width="3"><path d="M92 134h41m-41 10h56m51-10h41m-41 10h56m51-10h41m-41 10h56"/></g><g fill="#2c9bc5"><circle cx="142" cy="161" r="4"/><circle cx="249" cy="161" r="4"/><circle cx="356" cy="161" r="4"/></g></svg></div><img src="see-entrelec.png" loading="lazy" alt="Bibliothèque de composants et références matérielles dans un dossier électrique" data-fallback="hide"><span class="project-type">BUREAU D'ÉTUDES</span><span class="project-id">03 / 06</span></div><div class="project-body"><span class="project-kicker">Méthodes & traçabilité</span><h3>Bibliothèque CAO et codification matérielle</h3><p>Renseigner et contrôler les références fabricant et les références internes pour faciliter la documentation et la préparation.</p><div class="project-bottom"><div class="tag-set"><span class="tag">CAO</span><span class="tag">Nomenclature</span><span class="tag">Traçabilité</span></div><button type="button" class="project-more" data-project="codification" aria-label="Voir le détail du projet Bibliothèque CAO"><span>Voir</span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" aria-hidden="true"><path d="M5 19 19 5M7 5h12v12"/></svg></button></div></div></article>
+        <!-- Projet 04 -->
+        <article class="project-card" data-category="school"><div class="project-media academic"><div class="project-art" aria-hidden="true"><svg viewBox="0 0 460 220" fill="none"><rect x="44" y="27" width="372" height="170" rx="12" fill="#1b445d" stroke="#5fbbc9"/><path d="M70 165V54m0 111h317" stroke="#aedfeb" stroke-width="2"/><path d="M70 125h317M70 85h317M140 53v112M210 53v112M280 53v112M350 53v112" stroke="#5c89a0" stroke-opacity=".4"/><path d="M70 159Q132 151 175 100T275 66Q331 60 386 128" stroke="#76edca" stroke-width="5" stroke-linecap="round"/><circle cx="270" cy="66" r="8" fill="#c0fff0" stroke="#60baab" stroke-width="3"/><path d="M270 48V34m-18 32h-13" stroke="#a5eed8"/><rect x="313" y="40" width="77" height="34" rx="6" fill="#d0f6ed"/><text x="322" y="54" fill="#174f55" font-family="monospace" font-size="9">P MAX</text><text x="322" y="66" fill="#174f55" font-family="monospace" font-size="10">MPPT</text></svg></div><img src="CARTEMPPT.png" loading="lazy" alt="Carte électronique du projet d'asservissement MPPT photovoltaïque" data-fallback="hide"><span class="project-type">PROJET UNIVERSITAIRE</span><span class="project-id">04 / 06</span></div><div class="project-body"><span class="project-kicker">Électronique & énergie</span><h3>Asservissement MPPT photovoltaïque</h3><p>Étude d'une recherche du point de puissance maximale, programmation embarquée en C et validation des comportements.</p><div class="project-bottom"><div class="tag-set"><span class="tag">dsPIC33</span><span class="tag">C embarqué</span><span class="tag">Simulink</span></div><button type="button" class="project-more" data-project="mppt" aria-label="Voir le détail du projet MPPT"><span>Voir</span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" aria-hidden="true"><path d="M5 19 19 5M7 5h12v12"/></svg></button></div></div></article>
+        <!-- Projet 05 -->
+        <article class="project-card" data-category="school"><div class="project-media academic"><div class="project-art" aria-hidden="true"><svg viewBox="0 0 460 220" fill="none"><rect x="50" y="41" width="173" height="145" rx="10" fill="#d5eaf1"/><rect x="68" y="59" width="137" height="48" rx="4" fill="#255a72"/><path d="M83 89c15-28 31 26 47 0s30-22 48-5" stroke="#7ff0df" stroke-width="3" fill="none"/><g fill="#6e9cae"><rect x="70" y="120" width="42" height="50" rx="4"/><rect x="120" y="120" width="38" height="50" rx="4"/><rect x="166" y="120" width="37" height="50" rx="4"/></g><path d="M223 111h67m0 0-11-9m11 9-11 9" stroke="#83d8ee" stroke-width="4"/><circle cx="346" cy="113" r="57" stroke="#c1e5ef" stroke-width="7"/><circle cx="346" cy="113" r="28" stroke="#8fcede" stroke-width="4"/><path d="M346 84v58m-24-43 48 28m-48 0 48-28" stroke="#91cfdf" stroke-width="4"/><text x="320" y="194" font-family="monospace" font-size="12" fill="#b5e0eb">MOTEUR</text></svg></div><img src="COFFRETELECVARIATEUR.png" loading="lazy" alt="Coffret variateur Schneider ATV320 du projet universitaire" data-fallback="hide"><span class="project-type">PROJET UNIVERSITAIRE</span><span class="project-id">05 / 06</span></div><div class="project-body"><span class="project-kicker">Commande de moteur</span><h3>Coffret variateur Schneider ATV320</h3><p>Conception d'un coffret de commande, paramétrage d'un variateur et étude des conditions de fonctionnement.</p><div class="project-bottom"><div class="tag-set"><span class="tag">ATV320</span><span class="tag">SoMove</span><span class="tag">Commande</span></div><button type="button" class="project-more" data-project="variateur" aria-label="Voir le détail du projet Coffret variateur"><span>Voir</span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" aria-hidden="true"><path d="M5 19 19 5M7 5h12v12"/></svg></button></div></div></article>
+        <!-- Projet 06 -->
+        <article class="project-card" data-category="school"><div class="project-media academic"><div class="project-art" aria-hidden="true"><svg viewBox="0 0 460 220" fill="none"><rect x="49" y="29" width="362" height="165" rx="11" fill="#1b465b" stroke="#61bacb"/><path d="M75 167h310M75 44v123" stroke="#8fbdce" stroke-width="2"/><g fill="#59c3ce"><rect x="100" y="72" width="25" height="94" rx="3"/><rect x="147" y="107" width="25" height="59" rx="3"/><rect x="194" y="127" width="25" height="39" rx="3"/><rect x="241" y="139" width="25" height="27" rx="3"/><rect x="288" y="146" width="25" height="20" rx="3"/><rect x="335" y="153" width="25" height="13" rx="3"/></g><path d="M88 104c20-38 40-38 60 0s40 38 60 0 40-38 60 0 40 38 60 0 40-38 60 0" stroke="#b9f3e0" stroke-width="3" fill="none"/><text x="305" y="56" fill="#d7f4f0" font-size="12" font-family="monospace">THD</text></svg></div><img src="thd-reseau.png" loading="lazy" alt="Mesures d'harmoniques et qualité du réseau électrique" data-fallback="hide"><span class="project-type">PROJET UNIVERSITAIRE</span><span class="project-id">06 / 06</span></div><div class="project-body"><span class="project-kicker">Mesures & qualité d'énergie</span><h3>Audit d'éclairage et analyse harmonique</h3><p>Mesures d'éclairement et analyse des harmoniques pour étudier la qualité de l'énergie d'une installation.</p><div class="project-bottom"><div class="tag-set"><span class="tag">THD</span><span class="tag">Mesures</span><span class="tag">Éclairage BT</span></div><button type="button" class="project-more" data-project="thd" aria-label="Voir le détail du projet Analyse harmonique"><span>Voir</span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" aria-hidden="true"><path d="M5 19 19 5M7 5h12v12"/></svg></button></div></div></article>
+      </div>
+      <p class="projects-disclaimer">Les visuels techniques illustrent les thèmes abordés. Les documents de l'entreprise ne sont présentés que dans le respect de leur confidentialité.</p>
+    </div></section>
+
+    <!-- Formation & compétences -->
+    <section class="section journey-section" id="parcours" aria-labelledby="journey-title"><div class="container journey-layout">
+      <div><span class="eyebrow" style="color:#2281b8"><span class="eyebrow-line"></span> 04 / Parcours</span><h2 class="section-heading" id="journey-title">Construire un parcours d'ingénieur.</h2><p class="section-lead">Un parcours de formation en génie électrique, enrichi par l'expérience industrielle en alternance et par des réalisations pratiques.</p>
+        <div class="journey-list">
+          <article class="journey-item"><span class="journey-date">2027 · OBJECTIF</span><h3>École d'ingénieurs en alternance</h3><p>Projet de poursuite d'études en génie électrique, automatique ou robotique, dans le cadre d'un contrat de trois ans.</p></article>
+          <article class="journey-item"><span class="journey-date">2025 – 2027 · EN COURS</span><h3>Alternance — ANNEALSYS (Groupe ECM)</h3><p>Dessinateur-projeteur en électricité au sein du bureau d'études.</p></article>
+          <article class="journey-item"><span class="journey-date">2024 – 2027 · EN COURS</span><h3>BUT Génie Électrique et Informatique Industrielle</h3><p>IUT de Poitiers · Parcours Électricité et Maîtrise de l'Énergie (EME).</p></article>
+          <article class="journey-item"><span class="journey-date">2024 · OBTENU</span><h3>Baccalauréat général — Mention Bien</h3><p>Lycée Français Michel Montaigne (Gabon) · Mathématiques et physique-chimie.</p></article>
         </div>
-        <span class="text-xs font-mono text-slate-400">Dossiers documentés</span>
       </div>
+      <div id="competences"><div class="skills-panel"><h3>Outils & compétences</h3><p class="skills-intro">Compétences mobilisées en entreprise et découvertes ou approfondies lors de mes projets universitaires.</p>
+        <div class="skill-group"><div class="skill-group-head"><span class="skill-dot"></span> Conception & électricité industrielle</div><div class="skill-chips"><span>SEE Electrical Expert</span><span>Schémas puissance / commande</span><span>Borniers & équipotentielles</span><span>Nomenclatures</span><span>Appareillage électrique</span><span>Documentation technique</span></div></div>
+        <div class="skill-group"><div class="skill-group-head"><span class="skill-dot"></span> Automatisme & contrôle</div><div class="skill-chips"><span>Schneider Electric</span><span>Beckhoff</span><span>GRAFCET</span><span>Ladder</span><span>SoMove</span><span>Régulation / asservissement</span></div></div>
+        <div class="skill-group"><div class="skill-group-head"><span class="skill-dot"></span> Électronique & programmation</div><div class="skill-chips"><span>Microchip dsPIC33</span><span>Langage C</span><span>Python</span><span>MATLAB / Simulink</span><span>Mesures & acquisition</span><span>Bus industriels (notions)</span></div></div>
+        <div class="skill-group"><div class="skill-group-head"><span class="skill-dot"></span> Méthodes de travail</div><div class="skill-chips"><span>Rigueur documentaire</span><span>Analyse de problèmes</span><span>Travail en équipe</span><span>Communication atelier / BE</span></div></div>
+      </div></div>
+    </div></section>
 
-      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-7">
-
-        <!-- Fiche 1 : Résolution Problème Borniers SEE Electrical -->
-        <article class="bg-white rounded-2xl border border-slate-200/80 overflow-hidden card-project flex flex-col justify-between">
-          <div>
-            <div class="aspect-[4/3] bg-slate-900 overflow-hidden flex items-center justify-center">
-              <img 
-                src="see-bornier.png" 
-                alt="Bornier d'alimentation principale sous SEE Electrical" 
-                class="w-full h-full object-contain p-2 transition-transform duration-300 hover:scale-105"
-                onerror="this.onerror=null; this.src='armoire-commande.jpg';"
-              >
-            </div>
-
-            <div class="p-6">
-              <h3 class="text-base font-bold text-slate-900 mb-2 leading-snug">Fiabilisation des Borniers d'Alimentation</h3>
-              <p class="text-xs text-slate-600 leading-relaxed mb-3">
-                <strong>Difficulté rencontrée :</strong> La génération automatique sous SEE Electrical produisait des inversions de conducteurs et des pontages erronés, bloquant le câblage à l'atelier.<br/>
-                <strong>Action menée :</strong> Mise en place d'un audit de cohérence sur le module borniers, correction manuelle des ponts et régénération contrôlée avant mise en fabrication.
-              </p>
-              <div class="text-[11px] font-mono text-[#0077B5] font-semibold">
-                Dossier AS-ONE 100 • Bornier +XPA
-              </div>
-            </div>
-          </div>
-
-          <div class="px-6 pb-5 pt-3 border-t border-slate-100 flex flex-wrap gap-1.5">
-            <span class="text-[10px] font-mono bg-slate-100 text-slate-700 px-2 py-0.5 rounded">SEE Electrical</span>
-            <span class="text-[10px] font-mono bg-slate-100 text-slate-700 px-2 py-0.5 rounded">Audit Liaisons</span>
-            <span class="text-[10px] font-mono bg-slate-100 text-slate-700 px-2 py-0.5 rounded">Contrôle Câblage</span>
-          </div>
-        </article>
-
-        <!-- Fiche 2 : Standardisation Bibliothèque Entrelec -->
-        <article class="bg-white rounded-2xl border border-slate-200/80 overflow-hidden card-project flex flex-col justify-between">
-          <div>
-            <div class="aspect-[4/3] bg-slate-900 overflow-hidden flex items-center justify-center">
-              <img 
-                src="see-entrelec.png" 
-                alt="Gestion des références Entrelec et codes internes Annealsys" 
-                class="w-full h-full object-contain p-2 transition-transform duration-300 hover:scale-105"
-                onerror="this.onerror=null; this.src='electrovanne-pneumatique.jpg';"
-              >
-            </div>
-
-            <div class="p-6">
-              <h3 class="text-base font-bold text-slate-900 mb-2 leading-snug">Double Codification & Bibliothèque CAO</h3>
-              <p class="text-xs text-slate-600 leading-relaxed mb-3">
-                <strong>Difficulté rencontrée :</strong> Risque d'erreur de commande lors de la préparation matière dû à des références incomplètes.<br/>
-                <strong>Action menée :</strong> Intégration systématique sur chaque symbole des références fabricant Entrelec (ex. 1SNA115124R0700) couplées aux références stock internes Annealsys (D012-02033).
-              </p>
-              <div class="text-[11px] font-mono text-[#0077B5] font-semibold">
-                Standardisation Bibliothèque • Traçabilité BOM
-              </div>
-            </div>
-          </div>
-
-          <div class="px-6 pb-5 pt-3 border-t border-slate-100 flex flex-wrap gap-1.5">
-            <span class="text-[10px] font-mono bg-slate-100 text-slate-700 px-2 py-0.5 rounded">Entrelec</span>
-            <span class="text-[10px] font-mono bg-slate-100 text-slate-700 px-2 py-0.5 rounded">Gestion Matériel</span>
-            <span class="text-[10px] font-mono bg-slate-100 text-slate-700 px-2 py-0.5 rounded">Nomenclature</span>
-          </div>
-        </article>
-
-        <!-- Fiche 3 : Armoire de Puissance AS-ONE Réelle -->
-        <article class="bg-white rounded-2xl border border-slate-200/80 overflow-hidden card-project flex flex-col justify-between">
-          <div>
-            <div class="aspect-[4/3] bg-slate-100 overflow-hidden">
-              <img 
-                src="armoire-puissance-reperee.jpg" 
-                alt="Armoire de puissance machine AS-ONE repérée" 
-                class="w-full h-full object-cover transition-transform duration-300 hover:scale-105"
-                onerror="this.onerror=null; this.src='armoire-commande.jpg';"
-              >
-            </div>
-
-            <div class="p-6">
-              <h3 class="text-base font-bold text-slate-900 mb-2 leading-snug">Étude d'Implantation Armoire 400V (AS-ONE)</h3>
-              <p class="text-xs text-slate-600 leading-relaxed mb-3">
-                <strong>Mission :</strong> Réalisation du repérage et intégration des départs puissance : répartiteur, disjoncteurs moteurs, contacteurs de pompe à vide, transformateur et capteurs de débit d'eau.<br/>
-                <strong>Exigence :</strong> Respect des distances d'isolement et ségrégation des câbles puissance/commande.
-              </p>
-              <div class="text-[11px] font-mono text-[#0077B5] font-semibold">
-                Application NFC 15-100 • Directive Machine CE
-              </div>
-            </div>
-          </div>
-
-          <div class="px-6 pb-5 pt-3 border-t border-slate-100 flex flex-wrap gap-1.5">
-            <span class="text-[10px] font-mono bg-slate-100 text-slate-700 px-2 py-0.5 rounded">Puissance 400V</span>
-            <span class="text-[10px] font-mono bg-slate-100 text-slate-700 px-2 py-0.5 rounded">Implantation BE</span>
-            <span class="text-[10px] font-mono bg-slate-100 text-slate-700 px-2 py-0.5 rounded">Sécurité</span>
-          </div>
-        </article>
-
-        <!-- Fiche 4 : SAÉ MPPT dsPIC33 -->
-        <article class="bg-white rounded-2xl border border-slate-200/80 overflow-hidden card-project flex flex-col justify-between">
-          <div>
-            <div class="aspect-[4/3] bg-slate-100 overflow-hidden">
-              <img 
-                src="CARTEMPPT.png" 
-                alt="Carte dsPIC33 pour asservissement MPPT" 
-                class="w-full h-full object-cover transition-transform duration-300 hover:scale-105"
-              >
-            </div>
-
-            <div class="p-6">
-              <h3 class="text-base font-bold text-slate-900 mb-2 leading-snug">Asservissement MPPT Photovoltaïque (dsPIC33)</h3>
-              <p class="text-xs text-slate-600 leading-relaxed mb-3">
-                <strong>Difficulté :</strong> Instabilité autour du point de puissance maximale sous variations rapides d'éclairement.<br/>
-                <strong>Réalisation :</strong> Programmation C de l'algorithme <em>Perturb & Observe</em> avec régulation de pas sur microcontrôleur Microchip dsPIC33. Validation des boucles fermées sur banc dSPACE / Simulink.
-              </p>
-              <div class="text-[11px] font-mono text-[#0077B5] font-semibold">
-                SAÉ 4.EME.01 • 40h de projet technique en binôme
-              </div>
-            </div>
-          </div>
-
-          <div class="px-6 pb-5 pt-3 border-t border-slate-100 flex flex-wrap gap-1.5">
-            <span class="text-[10px] font-mono bg-slate-100 text-slate-700 px-2 py-0.5 rounded">dsPIC33 (C)</span>
-            <span class="text-[10px] font-mono bg-slate-100 text-slate-700 px-2 py-0.5 rounded">Simulink</span>
-            <span class="text-[10px] font-mono bg-slate-100 text-slate-700 px-2 py-0.5 rounded">MPPT P&O</span>
-          </div>
-        </article>
-
-        <!-- Fiche 5 : Variateur ATV320 HVAC -->
-        <article class="bg-white rounded-2xl border border-slate-200/80 overflow-hidden card-project flex flex-col justify-between">
-          <div>
-            <div class="aspect-[4/3] bg-slate-100 overflow-hidden">
-              <img 
-                src="COFFRETELECVARIATEUR.png" 
-                alt="Coffret variateur Schneider ATV320 HVAC" 
-                class="w-full h-full object-cover transition-transform duration-300 hover:scale-105"
-              >
-            </div>
-
-            <div class="p-6">
-              <h3 class="text-base font-bold text-slate-900 mb-2 leading-snug">Coffret Variateur Schneider ATV320 (HVAC)</h3>
-              <p class="text-xs text-slate-600 leading-relaxed mb-3">
-                <strong>Difficulté :</strong> Respecter la consigne jour (100%) / nuit (15%) tout en intégrant la chaîne d'arrêt d'urgence EN 13849.<br/>
-                <strong>Réalisation :</strong> Schéma SEE Electrical, paramétrage SoMove avant mise sous tension, logique automate RS Logic et auto-contrôle de continuité et isolement.
-              </p>
-              <div class="text-[11px] font-mono text-[#0077B5] font-semibold">
-                SAÉ 3.EME.01 • 45h de projet technique en binôme
-              </div>
-            </div>
-          </div>
-
-          <div class="px-6 pb-5 pt-3 border-t border-slate-100 flex flex-wrap gap-1.5">
-            <span class="text-[10px] font-mono bg-slate-100 text-slate-700 px-2 py-0.5 rounded">Schneider ATV320</span>
-            <span class="text-[10px] font-mono bg-slate-100 text-slate-700 px-2 py-0.5 rounded">SoMove</span>
-            <span class="text-[10px] font-mono bg-slate-100 text-slate-700 px-2 py-0.5 rounded">NFC 15-100</span>
-          </div>
-        </article>
-
-        <!-- Fiche 6 : Éclairage BT & Harmoniques THD -->
-        <article class="bg-white rounded-2xl border border-slate-200/80 overflow-hidden card-project flex flex-col justify-between">
-          <div>
-            <div class="aspect-[4/3] bg-slate-100 overflow-hidden">
-              <img 
-                src="thd-reseau.png" 
-                alt="Mesure de qualité réseau et spectre THD" 
-                class="w-full h-full object-cover transition-transform duration-300 hover:scale-105"
-                onerror="this.onerror=null; this.src='thd-reseau.jpg';"
-              >
-            </div>
-
-            <div class="p-6">
-              <h3 class="text-base font-bold text-slate-900 mb-2 leading-snug">Audit Éclairage Basse Tension & Mesure THD</h3>
-              <p class="text-xs text-slate-600 leading-relaxed mb-3">
-                <strong>Difficulté :</strong> Évaluer la pollution harmonique générée par les ballasts électroniques.<br/>
-                <strong>Réalisation :</strong> Relevé d'installation, mesure d'éclairement selon la norme EN 12464 et analyseur réseau pour quantifier le taux de distorsion harmonique (THD à 35.9% sous CEI 61000-3-2).
-              </p>
-              <div class="text-[11px] font-mono text-[#0077B5] font-semibold">
-                SAÉ 4.EME.02 • Projet individuel certifié
-              </div>
-            </div>
-          </div>
-
-          <div class="px-6 pb-5 pt-3 border-t border-slate-100 flex flex-wrap gap-1.5">
-            <span class="text-[10px] font-mono bg-slate-100 text-slate-700 px-2 py-0.5 rounded">Qualité Réseau</span>
-            <span class="text-[10px] font-mono bg-slate-100 text-slate-700 px-2 py-0.5 rounded">EN 12464</span>
-            <span class="text-[10px] font-mono bg-slate-100 text-slate-700 px-2 py-0.5 rounded">Harmoniques THD</span>
-          </div>
-        </article>
-
-      </div>
-    </section>
-
-    <!-- FORMATION & DIPLÔMES ALIGNÉS -->
-    <section id="parcours" class="space-y-6 mb-24">
-      <div>
-        <h2 class="text-2xl font-bold text-[#0B2545]">Formation & Parcours Académique</h2>
-        <p class="text-sm text-slate-500 mt-1">Parcours technique en cours et objectif de formation d'ingénieur.</p>
-      </div>
-
-      <div class="space-y-4">
-        
-        <!-- Objectif École d'ingénieurs -->
-        <div class="bg-white p-5 rounded-2xl border border-slate-200/80 flex items-center justify-between gap-4">
-          <div class="flex items-center gap-4">
-            <div class="w-12 h-12 rounded-xl bg-sky-50 text-[#0077B5] flex items-center justify-center font-bold text-base">
-              ING
-            </div>
-            <div>
-              <span class="text-xs font-mono text-[#0077B5] font-semibold">Projet Rentrée 2027 • Contrat d'Alternance 3 Ans</span>
-              <h3 class="text-base font-bold text-slate-900">Diplôme d'Ingénieur — Génie Électrique, Automatique & Robotique</h3>
-              <p class="text-xs text-slate-500">Polytech Montpellier / Écoles d'ingénieurs partenaires</p>
-            </div>
-          </div>
-          <span class="text-xs font-semibold px-3 py-1 rounded-full bg-sky-100 text-[#0077B5]">Candidature</span>
-        </div>
-
-        <!-- BUT GEII Poitiers -->
-        <div class="bg-white p-5 rounded-2xl border border-slate-200/80 flex items-center justify-between gap-4">
-          <div class="flex items-center gap-4">
-            <div class="w-12 h-12 rounded-xl bg-white border border-slate-100 p-1 flex items-center justify-center">
-              <img 
-                src="logo-iut.png" 
-                alt="IUT de Poitiers" 
-                class="w-full h-full object-contain"
-                onerror="this.onerror=null; this.parentElement.innerHTML='<span class=\'text-xs font-bold font-mono text-[#C8102E]\'>IUT</span>';"
-              >
-            </div>
-            <div>
-              <span class="text-xs font-mono text-slate-400">2024 - 2027 (Actuellement en 3ᵉ année)</span>
-              <h3 class="text-base font-bold text-slate-900">BUT Génie Électrique et Informatique Industrielle (GEII)</h3>
-              <p class="text-xs text-slate-500">IUT de Poitiers-Châtellerault-Niort • Parcours Électricité et Maîtrise de l'Énergie (EME)</p>
-            </div>
-          </div>
-          <span class="hidden sm:inline-block text-xs font-semibold px-3 py-1 rounded-full bg-slate-100 text-slate-700">En cours</span>
-        </div>
-
-        <!-- Baccalauréat Gabon -->
-        <div class="bg-white p-5 rounded-2xl border border-slate-200/80 flex items-center justify-between gap-4">
-          <div class="flex items-center gap-4">
-            <div class="w-12 h-12 rounded-xl bg-white border border-slate-100 p-1 flex items-center justify-center">
-              <img 
-                src="logo-montaigne.png" 
-                alt="Lycée Michel Montaigne" 
-                class="w-full h-full object-contain"
-                onerror="this.onerror=null; this.parentElement.innerHTML='<span class=\'text-xs font-bold font-mono text-emerald-600\'>LFMM</span>';"
-              >
-            </div>
-            <div>
-              <span class="text-xs font-mono text-slate-400">2024</span>
-              <h3 class="text-base font-bold text-slate-900">Baccalauréat Général — Mention Bien</h3>
-              <p class="text-xs text-slate-500">Lycée Français Michel Montaigne (Gabon) • Spécialités Mathématiques & Physique-Chimie</p>
-            </div>
-          </div>
-          <span class="hidden sm:inline-block text-xs font-semibold px-3 py-1 rounded-full bg-emerald-50 text-emerald-700">Obtenu</span>
-        </div>
-
-      </div>
-    </section>
-
-    <!-- COMPÉTENCES TECHNIQUES ORGANISÉES -->
-    <section id="competences" class="space-y-6 mb-24">
-      <div>
-        <h2 class="text-2xl font-bold text-[#0B2545]">Compétences Opérationnelles</h2>
-        <p class="text-sm text-slate-500 mt-1">Savoir-faire maîtrisés en bureau d'études et travaux pratiques.</p>
-      </div>
-
-      <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
-        
-        <div class="bg-white p-6 rounded-2xl border border-slate-200/80 shadow-sm">
-          <h3 class="text-sm font-bold uppercase tracking-wider text-[#0077B5] mb-4">Génie Électrique & CAO</h3>
-          <ul class="text-xs space-y-2.5 text-slate-600 font-medium">
-            <li class="flex items-center gap-2"><span class="w-1.5 h-1.5 rounded-full bg-[#0077B5]"></span> SEE Electrical (Folios puissance 400V & commande 24V)</li>
-            <li class="flex items-center gap-2"><span class="w-1.5 h-1.5 rounded-full bg-[#0077B5]"></span> Audit des borniers, régénération & double codification</li>
-            <li class="flex items-center gap-2"><span class="w-1.5 h-1.5 rounded-full bg-[#0077B5]"></span> Application des règles de l'art NFC 15-100 & CE</li>
-            <li class="flex items-center gap-2"><span class="w-1.5 h-1.5 rounded-full bg-[#0077B5]"></span> Dimensionnement appareillage & disjoncteurs moteurs</li>
-          </ul>
-        </div>
-
-        <div class="bg-white p-6 rounded-2xl border border-slate-200/80 shadow-sm">
-          <h3 class="text-sm font-bold uppercase tracking-wider text-[#0B2545] mb-4">Automatique & Commande</h3>
-          <ul class="text-xs space-y-2.5 text-slate-600 font-medium">
-            <li class="flex items-center gap-2"><span class="w-1.5 h-1.5 rounded-full bg-[#0B2545]"></span> Automates industriels (Schneider, Beckhoff)</li>
-            <li class="flex items-center gap-2"><span class="w-1.5 h-1.5 rounded-full bg-[#0B2545]"></span> Langages GRAFCET, Ladder, paramétrage SoMove</li>
-            <li class="flex items-center gap-2"><span class="w-1.5 h-1.5 rounded-full bg-[#0B2545]"></span> Régulation PID en boucle fermée & asservissement</li>
-            <li class="flex items-center gap-2"><span class="w-1.5 h-1.5 rounded-full bg-[#0B2545]"></span> Chaînes d'arrêt d'urgence certifiées EN 13849</li>
-          </ul>
-        </div>
-
-        <div class="bg-white p-6 rounded-2xl border border-slate-200/80 shadow-sm">
-          <h3 class="text-sm font-bold uppercase tracking-wider text-[#C8102E] mb-4">Robotique & Embarqué</h3>
-          <ul class="text-xs space-y-2.5 text-slate-600 font-medium">
-            <li class="flex items-center gap-2"><span class="w-1.5 h-1.5 rounded-full bg-[#C8102E]"></span> Raccordement modules robots de transfert wafers (SMIF)</li>
-            <li class="flex items-center gap-2"><span class="w-1.5 h-1.5 rounded-full bg-[#C8102E]"></span> C embarqué (Microchip dsPIC33, AVR) & Python</li>
-            <li class="flex items-center gap-2"><span class="w-1.5 h-1.5 rounded-full bg-[#C8102E]"></span> Simulateur dSPACE, Simulink & bus de commande</li>
-            <li class="flex items-center gap-2"><span class="w-1.5 h-1.5 rounded-full bg-[#C8102E]"></span> Bus industriels (EtherCAT, CAN, SPI, I2C)</li>
-          </ul>
-        </div>
-
-      </div>
-    </section>
-
-    <!-- BANNIÈRE CONTACT DIRECT -->
-    <section class="bg-[#0B2545] text-white p-8 sm:p-10 rounded-3xl flex flex-col sm:flex-row items-center justify-between gap-6">
-      <div class="space-y-1 text-center sm:text-left">
-        <h2 class="text-xl sm:text-2xl font-bold">Un projet d'alternance à proposer ?</h2>
-        <p class="text-xs sm:text-sm text-slate-300">Disponible pour un contrat de 3 ans en école d'ingénieurs (Rentrée 2027).</p>
-      </div>
-      <div class="flex flex-wrap items-center gap-3">
-        <a href="mailto:theryprofessionel@gmail.com" class="inline-flex items-center gap-2 bg-[#0077B5] hover:bg-[#005f93] text-white text-xs font-semibold px-5 py-3 rounded-xl transition-all shadow-sm">
-          <i data-lucide="mail" class="w-3.5 h-3.5"></i>
-          <span>theryprofessionel@gmail.com</span>
-        </a>
-        <a href="cv.pdf" download="CV_Thery_NDZOBE.pdf" class="inline-flex items-center gap-2 bg-white/10 hover:bg-white/20 text-white text-xs font-semibold px-5 py-3 rounded-xl transition-all">
-          <i data-lucide="download" class="w-3.5 h-3.5"></i>
-          <span>Télécharger mon CV</span>
-        </a>
-      </div>
-    </section>
-
+    <!-- Contact -->
+    <section class="contact-section" id="contact" aria-labelledby="contact-title"><div class="container"><div class="contact-card"><div class="contact-copy"><span class="eyebrow"><span class="eyebrow-line"></span> 05 / Échangeons</span><h2 id="contact-title">Construisons la suite ensemble.</h2><p>Je recherche une alternance de trois ans pour poursuivre ma formation en école d'ingénieurs à la rentrée 2027. Échangeons autour des métiers du génie électrique, de l'automatisme et de la robotique.</p></div><div class="contact-actions"><a href="mailto:theryprofessionel@gmail.com?subject=Proposition%20d%27alternance%20ing%C3%A9nieur%20%E2%80%93%202027" class="btn btn-primary">Me contacter <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><path d="M5 12h14m-6-6 6 6-6 6"/></svg></a><a href="https://www.linkedin.com/in/thery-ndzobe-ba0485364/" target="_blank" rel="noopener noreferrer" class="btn btn-outline">Mon profil LinkedIn ↗</a></div></div></div></section>
   </main>
 
-  <!-- FOOTER -->
-  <footer class="border-t border-slate-200 bg-white py-8 px-6 text-center text-xs text-slate-500">
-    <div class="max-w-5xl mx-auto flex flex-col sm:flex-row items-center justify-between gap-4">
-      <p>© 2026 Thery NDZOBE. Tous droits réservés.</p>
-      <div class="flex items-center gap-6">
-        <a href="cv.pdf" download="CV_Thery_NDZOBE.pdf" class="hover:text-slate-900 transition-colors">CV (PDF)</a>
-        <a href="https://linkedin.com" target="_blank" class="hover:text-slate-900 transition-colors">LinkedIn</a>
-      </div>
-    </div>
-  </footer>
+  <footer class="site-footer"><div class="container footer-inner"><p>© <span id="year">2026</span> <strong>Thery NDZOBE</strong> · Conçu avec précision.</p><div class="footer-links"><a href="https://www.linkedin.com/in/thery-ndzobe-ba0485364/" target="_blank" rel="noopener noreferrer">LinkedIn ↗</a><a href="mailto:theryprofessionel@gmail.com">E-mail ↗</a><a href="cv.pdf" target="_blank" rel="noopener" class="cv-link">CV (PDF) ↗</a><a href="#accueil">Retour en haut ↑</a></div></div></footer>
+
+  <dialog class="project-dialog" id="project-dialog" aria-labelledby="dialog-title"><div class="dialog-top"><span class="eyebrow" id="dialog-category">DÉTAIL DU PROJET</span><h2 id="dialog-title">Projet</h2><p id="dialog-subtitle"></p><button type="button" id="dialog-close" class="dialog-close" aria-label="Fermer la fiche projet">×</button></div><div class="dialog-inner"><p class="dialog-intro" id="dialog-intro"></p><div class="dialog-row"><h3>Contexte et enjeu</h3><p id="dialog-context"></p></div><div class="dialog-row"><h3>Mon travail</h3><p id="dialog-actions"></p></div><div class="dialog-row"><h3>Apprentissages et démarche</h3><p id="dialog-learnings"></p></div><div class="dialog-bottom"><div class="tag-set" id="dialog-tags"></div><button type="button" id="dialog-close-bottom">Fermer la fiche</button></div></div></dialog>
 
   <script>
-    lucide.createIcons();
+  (() => {
+    'use strict';
+    const header = document.getElementById('site-header');
+    const menuButton = document.getElementById('menu-toggle');
+    const menu = document.getElementById('navigation-mobile');
+    const closeMenu = () => {
+      menu.classList.remove('is-open');
+      header.classList.remove('menu-open');
+      menuButton.setAttribute('aria-expanded', 'false');
+      menuButton.setAttribute('aria-label', 'Ouvrir le menu');
+    };
+    menuButton.addEventListener('click', () => {
+      const isOpen = !menu.classList.contains('is-open');
+      menu.classList.toggle('is-open', isOpen);
+      header.classList.toggle('menu-open', isOpen);
+      menuButton.setAttribute('aria-expanded', String(isOpen));
+      menuButton.setAttribute('aria-label', isOpen ? 'Fermer le menu' : 'Ouvrir le menu');
+    });
+    menu.querySelectorAll('a').forEach(link => link.addEventListener('click', closeMenu));
+    document.addEventListener('click', event => {
+      if (!header.contains(event.target)) closeMenu();
+    });
+    window.addEventListener('resize', () => { if (window.innerWidth > 900) closeMenu(); });
+    window.addEventListener('scroll', () => { header.classList.toggle('is-scrolled', window.scrollY > 15); }, {passive:true});
+    header.classList.toggle('is-scrolled', window.scrollY > 15);
+
+    // Fallbacks si les photos du dépôt d'origine ne sont pas présentes.
+    const portrait = document.getElementById('portrait-image');
+    portrait.addEventListener('error', () => {
+      if (!portrait.dataset.triedJpg) { portrait.dataset.triedJpg = 'true'; portrait.src = 'photoportfolio.jpg'; }
+      else portrait.hidden = true;
+    });
+    document.querySelectorAll('.project-media img[data-fallback="hide"]').forEach(image => {
+      image.addEventListener('error', () => { image.hidden = true; });
+    });
+
+    const filterButtons = [...document.querySelectorAll('[data-filter]')];
+    const cards = [...document.querySelectorAll('.project-card')];
+    const count = document.getElementById('project-count');
+    filterButtons.forEach(button => button.addEventListener('click', () => {
+      const filter = button.dataset.filter;
+      let shown = 0;
+      filterButtons.forEach(b => b.setAttribute('aria-pressed', String(b === button)));
+      cards.forEach(card => { const visible = filter === 'all' || card.dataset.category === filter; card.hidden = !visible; if (visible) shown += 1; });
+      count.textContent = `${String(shown).padStart(2,'0')} projet${shown > 1 ? 's' : ''}`;
+    }));
+
+    const projectDetails = {
+      borniers:{category:'Bureau d’études · ANNEALSYS', title:'Fiabilisation des borniers industriels', subtitle:'CAO électrique · Contrôle documentaire', intro:'Contrôler la cohérence des connexions représentées dans les dossiers électriques pour faciliter le travail des équipes de câblage.', context:'La génération des borniers et des pontages dans un logiciel de CAO peut nécessiter des vérifications et corrections afin d’éviter des incohérences dans les dossiers transmis à la production.', actions:'Analyse des équipotentielles et des liaisons, vérification des bornes et des pontages, correction des représentations et contrôle après régénération du dossier.', learnings:'Rigueur dans le traitement des folios, connaissance des contraintes de câblage et meilleure compréhension de l’interface entre bureau d’études et atelier.', tags:['SEE Electrical Expert','Borniers','Contrôle']},
+      armoire:{category:'Bureau d’études · ANNEALSYS', title:'Schémas et intégration d’une armoire 400 V', subtitle:'Distribution de puissance · Équipements industriels', intro:'Documenter les composants et raccordements électriques associés à une armoire de puissance utilisée sur un équipement industriel.', context:'Les ensembles de puissance réunissent protections, contacteurs, départs moteurs et autres composants dont la représentation doit être cohérente avec la configuration de la machine.', actions:'Travail de repérage des appareils, adaptation de schémas d’exécution, identification des liaisons entre les départs et les fonctions de commande.', learnings:'Lecture des architectures électriques industrielles, repérage matériel et attention aux interfaces puissance/commande. Les informations de conception sensibles ne sont pas publiées.', tags:['400 V','Puissance','CAO']},
+      codification:{category:'Bureau d’études · ANNEALSYS', title:'Bibliothèque CAO et codification matérielle', subtitle:'Documentation · Nomenclatures', intro:'Assurer une désignation cohérente des composants pour rendre les dossiers électriques plus faciles à exploiter.', context:'Dans une documentation technique, les références fabricant et les références internes doivent être identifiées de façon fiable afin d’éviter les ambiguïtés.', actions:'Renseignement et vérification des références associées aux symboles et aux composants, avec attention portée à la cohérence des nomenclatures.', learnings:'Traçabilité, structuration des données techniques et importance d’une documentation partagée par le bureau d’études et les équipes de production.', tags:['Nomenclature','Références','SEE Electrical']},
+      mppt:{category:'Projet universitaire · BUT GEII', title:'Asservissement MPPT photovoltaïque', subtitle:'Électronique de puissance · Programmation', intro:'Étudier et programmer une stratégie de recherche du point de puissance maximale d’une source photovoltaïque.', context:'La puissance fournie par un panneau varie selon les conditions de fonctionnement. Une commande MPPT vise à rechercher un point de fonctionnement favorable.', actions:'Étude de l’algorithme Perturb & Observe, programmation en langage C sur microcontrôleur dsPIC33 et validation du comportement dans le cadre du projet.', learnings:'Programmation embarquée, mesures, boucles de régulation et compréhension des compromis entre stabilité et poursuite du point de puissance maximale.', tags:['dsPIC33','P&O','C embarqué','Simulink']},
+      variateur:{category:'Projet universitaire · BUT GEII', title:'Coffret variateur Schneider ATV320', subtitle:'Commande de moteur · Électrotechnique', intro:'Concevoir et étudier une solution de commande de moteur à l’aide d’un variateur de vitesse industriel.', context:'La commande doit répondre à des consignes de fonctionnement en tenant compte des contraintes électriques et des fonctions d’arrêt du système.', actions:'Réalisation de schémas, préparation et paramétrage du variateur avec SoMove, étude de la logique de commande et vérifications prévues avant la mise sous tension.', learnings:'Lecture de schémas de commande, paramétrage d’un variateur, analyse des séquences de fonctionnement et vérifications électriques.', tags:['Schneider ATV320','SoMove','Commande']},
+      thd:{category:'Projet universitaire · BUT GEII', title:'Audit d’éclairage et analyse harmonique', subtitle:'Qualité de l’énergie · Instrumentation', intro:'Mesurer le fonctionnement électrique d’une installation d’éclairage et analyser les perturbations associées.', context:'Les équipements électroniques d’éclairage peuvent influencer la forme d’onde du courant et générer des composantes harmoniques.', actions:'Relevés et mesures d’éclairement, exploitation d’un analyseur réseau et analyse du taux de distorsion harmonique (THD).', learnings:'Instrumentation, interprétation de mesures, qualité de l’énergie et présentation d’un diagnostic technique.', tags:['THD','Mesures','Éclairage BT']}
+    };
+    const dialog = document.getElementById('project-dialog');
+    const dialogFields = {category:'dialog-category',title:'dialog-title',subtitle:'dialog-subtitle',intro:'dialog-intro',context:'dialog-context',actions:'dialog-actions',learnings:'dialog-learnings'};
+    let previousFocus = null;
+    document.querySelectorAll('[data-project]').forEach(button => button.addEventListener('click', () => {
+      const info = projectDetails[button.dataset.project]; if (!info) return;
+      previousFocus = button;
+      Object.entries(dialogFields).forEach(([field,id]) => { document.getElementById(id).textContent = info[field]; });
+      const tags = document.getElementById('dialog-tags');
+      tags.replaceChildren(...info.tags.map(label => { const span = document.createElement('span'); span.className = 'tag'; span.textContent = label; return span; }));
+      dialog.showModal();
+      document.body.classList.add('modal-open');
+    }));
+    const dismissDialog = () => { if (dialog.open) dialog.close(); };
+    document.getElementById('dialog-close').addEventListener('click', dismissDialog);
+    document.getElementById('dialog-close-bottom').addEventListener('click', dismissDialog);
+    dialog.addEventListener('click', event => { if (event.target === dialog) dismissDialog(); });
+    dialog.addEventListener('close', () => { document.body.classList.remove('modal-open'); previousFocus?.focus(); });
+    document.addEventListener('keydown', e => { if (e.key === 'Escape') closeMenu(); });
+    document.getElementById('year').textContent = new Date().getFullYear();
+  })();
   </script>
 </body>
 </html>
